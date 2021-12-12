@@ -1,5 +1,5 @@
-### Hello 👋
-<!-- ![Banner image for margaretmz GitHub profile](images/banner_image_margaret.jpg) -->
+<!-- ### Hello 👋 -->
+![Banner image for toluwee GitHub profile](7167578.jpg)
 
 
 <!--
