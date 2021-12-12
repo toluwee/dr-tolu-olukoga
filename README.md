@@ -1,4 +1,6 @@
-### Hi there 👋
+### Hello 👋
+<!-- ![Banner image for margaretmz GitHub profile](images/banner_image_margaret.jpg) -->
+
 
 <!--
 **toluwee/toluwee** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
