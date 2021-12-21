@@ -1,8 +1,8 @@
 
 ![Banner image for toluwee GitHub profile](7167578.jpg)
-### Hello 👋. I am Tolu Olukoga.
+### Hello 👋 I am Tolu Olukoga.
 - 🔭 I’m currently working on getting an internship/fulltime roles
-- 👯 I’m looking to use data science and machine learning
+- 👯 I’m looking to use data science and machine learning techniques
 - 😄 I’m excited to solve business problems and drive more revenue
 - 📫 How to reach me: onlinetolu@gmail.com | 337-282-1920
 - 😄 Pronouns: She/her
