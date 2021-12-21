@@ -1,6 +1,9 @@
-<!-- ### Hello 👋 -->
-![Banner image for toluwee GitHub profile](7167578.jpg)
 
+![Banner image for toluwee GitHub profile](7167578.jpg)
+### Hello 👋. I am Tolu Olukoga.
+- 🔭 I’m currently working on getting an internship/fulltime roles
+- 👯 I’m looking to use data science and machine learning
+- 😄 I’m excited to solve business problems and drive more revenue
 
 <!--
 **toluwee/toluwee** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
