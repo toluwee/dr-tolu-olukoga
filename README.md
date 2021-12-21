@@ -4,6 +4,8 @@
 - 🔭 I’m currently working on getting an internship/fulltime roles
 - 👯 I’m looking to use data science and machine learning
 - 😄 I’m excited to solve business problems and drive more revenue
+- 📫 How to reach me: onlinetolu@gmail.com | 337-282-1920
+- 😄 Pronouns: She/her
 
 <!--
 **toluwee/toluwee** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
