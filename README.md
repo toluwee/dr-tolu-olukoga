@@ -1,11 +1,12 @@
 
 ![Banner image for toluwee GitHub profile](7167578.jpg)
 ### Hello 👋 I am Tolu Olukoga.
-- 🔭 I’m currently working on getting an internship/fulltime roles
-- 👯 I’m looking to use data science and machine learning techniques
-- 😄 I’m excited to solve business problems and drive more revenue
+- 👯 I’m open to internship/fulltime roles using machine learning and data science techniques
+- 🔭 I’m currently working on anomaly detection and machnie learning model deployment
+- 🌱 I’m currently refreshing knowledge on descriptive and inferential statistics
+- 😄 I’m excited to solve business problems and drive more revenue with data science and machine learning techniques
 - 📫 How to reach me: onlinetolu@gmail.com | 337-282-1920
-- 😄 Pronouns: She/her
+- ⚡ Pronouns: She/her
 
 <!--
 **toluwee/toluwee** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
