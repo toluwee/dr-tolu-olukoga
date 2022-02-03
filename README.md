@@ -2,7 +2,7 @@
 ![Banner image for toluwee GitHub profile](7167578.jpg)
 ### Hello 👋 I am Tolu Olukoga.
 - 👯 I’m open to internship/fulltime roles using machine learning and data science techniques
-- 🔭 I’m currently working on anomaly detection and machine learning model deployments
+- 🔭 I’m currently working on model deployments in AWS
 - 😄 I’m excited to solve business problems and drive more revenue with data science and machine learning techniques
 - 📫 How to reach me: onlinetolu@gmail.com | 337-282-1920
 - ⚡ Pronouns: She/her
