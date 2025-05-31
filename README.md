@@ -4,8 +4,7 @@
 - 👯 I’m open to fulltime roles that use machine learning and data science techniques to find a better way to get things done!
 - 🔭 I’m currently working on AI personalization solutions for travelers in Expedia Group Inc.
 - 😄 I’m excited to solve business problems and drive more revenue with data science and machine learning techniques
-- 📫 How to reach me: onlinetolu@gmail.com | 337-303-6531
-- https://toluwee.github.io/dr-tolu-olukoga/
+- 📫 How to reach me: onlinetolu@gmail.com | 337-303-6531 | https://toluwee.github.io/dr-tolu-olukoga/
 
 <!--
 **toluwee/toluwee** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
