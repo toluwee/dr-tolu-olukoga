@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agentic AI Deployment System | Tolu Olukoga</title>
+  <meta name="description" content="LangGraph-powered agentic AI system automating Kubernetes deployments, reducing complexity by 72% and deployment time from 2-4 hours to 30 minutes."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="nav-logo">Tolu Olukoga</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" class="active">Projects</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header style="padding: 2rem 0;">
+    <div class="container" style="text-align: left;">
+      <p style="margin: 0; color: #cbd5e1;"><a href="../projects.html" style="color: #cbd5e1;">← Back to Projects</a></p>
+      <h1 style="margin: 1rem 0;">Agentic AI Deployment System</h1>
+      <div style="margin-top: 1rem;">
+        <span class="tag primary">LangGraph</span>
+        <span class="tag primary">LangChain</span>
+        <span class="tag primary">Kubernetes</span>
+        <span class="tag primary">Multi-Agent Orchestration</span>
+        <span class="tag primary">GitLab</span>
+        <span class="tag primary">ArgoCD</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <article style="max-width: 800px; margin: 0 auto;">
+      <section class="card">
+        <h2 style="margin-top: 0;">Overview</h2>
+        <p>Production-grade agentic AI system that automated end-to-end Kubernetes deployments at Baptist Health South Florida. Using LangGraph-powered multi-agent orchestration, the system reduced deployment complexity by 72%, cutting deployment time from 2-4 hours to just 30 minutes while reducing manual steps from 18+ to fewer than 5.</p>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Problem Statement</h2>
+        <p>Healthcare deployments faced critical operational challenges:</p>
+        <ul>
+          <li><strong>Manual Complexity:</strong> 18+ manual steps required for each Kubernetes deployment, including GitLab pipeline triggers, ArgoCD sync, and AWS Certificate Manager configuration</li>
+          <li><strong>Time-Intensive Process:</strong> Each deployment took 2-4 hours of engineer time, creating deployment bottlenecks</li>
+          <li><strong>Error-Prone Workflows:</strong> Manual steps led to configuration errors, certificate issues, and deployment failures</li>
+          <li><strong>Limited Recovery:</strong> No automated error detection or rollback capabilities during failed deployments</li>
+          <li><strong>Regulatory Environment:</strong> Healthcare compliance requirements added complexity to deployment validation</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Solution Approach</h2>
+        <p>Designed and implemented a multi-agent orchestration system using LangGraph that intelligently coordinates deployment workflows across multiple infrastructure components.</p>
+
+        <h3>Multi-Agent Architecture</h3>
+        <p>The system employs specialized agents working in coordination:</p>
+        <ul>
+          <li><strong>Planning Agent:</strong> Analyzes deployment requirements and creates execution plan</li>
+          <li><strong>GitLab Agent:</strong> Manages CI/CD pipeline triggers and monitors build status</li>
+          <li><strong>ArgoCD Agent:</strong> Handles Kubernetes synchronization and deployment validation</li>
+          <li><strong>Certificate Agent:</strong> Automates AWS Certificate Manager configuration and verification</li>
+          <li><strong>Validation Agent:</strong> Performs health checks and compliance verification</li>
+          <li><strong>Recovery Agent:</strong> Detects failures and executes intelligent rollback procedures</li>
+        </ul>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>State Persistence:</strong> SQLite-based state tracking ensuring recovery from interruptions</li>
+          <li><strong>Intelligent Error Recovery:</strong> Automated detection and remediation of common deployment issues</li>
+          <li><strong>Automatic Rollback:</strong> Immediate rollback to last known good state on critical failures</li>
+          <li><strong>Audit Logging:</strong> Comprehensive compliance logging for healthcare regulatory requirements</li>
+          <li><strong>Human-in-the-Loop:</strong> Optional approval gates for critical deployment stages</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Technical Implementation</h2>
+
+        <h3>Technology Stack</h3>
+        <ul>
+          <li><strong>Agent Framework:</strong> LangGraph for multi-agent orchestration, LangChain for LLM integration</li>
+          <li><strong>Infrastructure:</strong> Kubernetes, GitLab CI/CD, ArgoCD, AWS Certificate Manager</li>
+          <li><strong>State Management:</strong> SQLite for workflow state persistence</li>
+          <li><strong>Cloud Platform:</strong> GCP Vertex AI for LLM inference</li>
+          <li><strong>Monitoring:</strong> Custom logging framework with compliance audit trails</li>
+        </ul>
+
+        <h3>LangGraph Workflow Design</h3>
+        <p>The deployment workflow is structured as a state graph with the following key nodes:</p>
+        <ul>
+          <li><strong>Initialization:</strong> Validate deployment parameters and check prerequisites</li>
+          <li><strong>Planning:</strong> Generate deployment execution plan based on current state</li>
+          <li><strong>GitLab Orchestration:</strong> Trigger pipelines, monitor builds, retrieve artifacts</li>
+          <li><strong>Certificate Management:</strong> Request, validate, and configure SSL certificates</li>
+          <li><strong>Kubernetes Deployment:</strong> Sync ArgoCD applications and monitor rollout status</li>
+          <li><strong>Validation:</strong> Execute health checks and compliance verification</li>
+          <li><strong>Completion/Rollback:</strong> Finalize deployment or execute recovery procedures</li>
+        </ul>
+
+        <h3>Error Recovery Strategy</h3>
+        <p>Multi-layered approach to handling deployment failures:</p>
+        <ul>
+          <li>Retry logic with exponential backoff for transient failures</li>
+          <li>Intelligent decision-making to determine retry vs. rollback scenarios</li>
+          <li>Automatic state checkpointing before critical operations</li>
+          <li>Rollback to last stable deployment configuration on critical failures</li>
+          <li>Alert notifications to engineering team with failure context</li>
+        </ul>
+
+        <h3>Compliance & Security</h3>
+        <p>Healthcare-specific requirements addressed through:</p>
+        <ul>
+          <li>Comprehensive audit logging of all deployment actions</li>
+          <li>Role-based access control integration with existing identity systems</li>
+          <li>Encrypted state storage for sensitive deployment parameters</li>
+          <li>Compliance validation checks before each deployment stage</li>
+          <li>Automated documentation generation for regulatory reporting</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Results & Impact</h2>
+        <div class="grid-2">
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">72%</h3>
+            <p style="color: var(--text-light);">Reduction in deployment complexity</p>
+          </div>
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">30 min</h3>
+            <p style="color: var(--text-light);">Deployment time (down from 2-4 hours)</p>
+          </div>
+        </div>
+        <div class="grid-2" style="margin-top: 1rem;">
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);"><5</h3>
+            <p style="color: var(--text-light);">Automated steps (from 18+)</p>
+          </div>
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">100%</h3>
+            <p style="color: var(--text-light);">Regulatory compliance maintained</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Operational Improvements</h3>
+        <ul>
+          <li>Reduced manual intervention during deployments by 85%</li>
+          <li>Eliminated configuration errors through automated validation</li>
+          <li>Deployment frequency increased from weekly to daily</li>
+          <li>Engineer productivity improved with freed capacity for development work</li>
+          <li>Zero deployment-related incidents after system implementation</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Lessons Learned</h2>
+        <ul>
+          <li><strong>State persistence is critical:</strong> SQLite-based state tracking prevented data loss during agent failures and enabled seamless recovery</li>
+          <li><strong>Design for failure:</strong> Automated rollback and error recovery capabilities proved essential in production environment</li>
+          <li><strong>Compliance from day one:</strong> Building audit logging and compliance frameworks early simplified regulatory adherence</li>
+          <li><strong>Agent specialization works:</strong> Dedicated agents for specific tasks (GitLab, ArgoCD, certificates) provided better error handling than monolithic approach</li>
+          <li><strong>Human oversight remains valuable:</strong> Optional approval gates for critical deployments balanced automation with control</li>
+          <li><strong>Incremental rollout essential:</strong> Gradual expansion from pilot projects to full production prevented large-scale issues</li>
+        </ul>
+      </section>
+    </article>
+
+    <section style="margin-top: 2rem; text-align: center;">
+      <a href="../projects.html" class="btn btn-secondary">← Back to All Projects</a>
+      <a href="../contact.html" class="btn btn-primary" style="margin-left: 1rem;">Discuss This Project</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Tolu Olukoga. All rights reserved.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

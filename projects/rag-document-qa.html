@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RAG-Based Document Q&A System | Tolu Olukoga</title>
+  <meta name="description" content="Enterprise NLP Q&A system processing 500+ policy documents with RAG architecture, achieving 100% citation accuracy in regulated healthcare environment."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="nav-logo">Tolu Olukoga</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" class="active">Projects</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header style="padding: 2rem 0;">
+    <div class="container" style="text-align: left;">
+      <p style="margin: 0; color: #cbd5e1;"><a href="../projects.html" style="color: #cbd5e1;">← Back to Projects</a></p>
+      <h1 style="margin: 1rem 0;">RAG-Based Document Q&A System</h1>
+      <div style="margin-top: 1rem;">
+        <span class="tag primary">RAG</span>
+        <span class="tag primary">LangChain</span>
+        <span class="tag primary">NLP</span>
+        <span class="tag primary">GCP Vertex AI</span>
+        <span class="tag primary">Vector Database</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <article style="max-width: 800px; margin: 0 auto;">
+      <section class="card">
+        <h2 style="margin-top: 0;">Overview</h2>
+        <p>Enterprise-grade NLP question-answering system built for Baptist Health South Florida, processing 500+ policy documents using Retrieval-Augmented Generation (RAG) architecture. The system delivers accurate, cited responses while maintaining 100% citation accuracy and full compliance with healthcare regulatory requirements.</p>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Problem Statement</h2>
+        <p>Healthcare organizations face significant challenges in policy document management:</p>
+        <ul>
+          <li><strong>Information Overload:</strong> 500+ policy documents across clinical, operational, and compliance domains</li>
+          <li><strong>Time-Consuming Search:</strong> Employees spending hours manually searching through documents for specific policies</li>
+          <li><strong>Accuracy Requirements:</strong> Healthcare regulations demand 100% accurate citations and source attribution</li>
+          <li><strong>Multi-Document Synthesis:</strong> Complex queries often require information from multiple policy documents</li>
+          <li><strong>Compliance Tracking:</strong> Need for comprehensive audit trails of information access and retrieval</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Solution Approach</h2>
+        <p>Implemented a production RAG system using LangChain and GCP Vertex AI that combines semantic search with large language model reasoning for accurate, contextual responses.</p>
+
+        <h3>RAG Architecture</h3>
+        <p>Multi-stage pipeline for document processing and retrieval:</p>
+        <ul>
+          <li><strong>Document Ingestion:</strong> Automated pipeline for processing policy documents (PDF, DOCX, HTML)</li>
+          <li><strong>Intelligent Chunking:</strong> Semantic-aware text splitting preserving context boundaries</li>
+          <li><strong>Vector Embedding:</strong> Document chunks embedded using state-of-the-art embedding models</li>
+          <li><strong>Retrieval Layer:</strong> Hybrid search combining semantic similarity and keyword matching</li>
+          <li><strong>LLM Synthesis:</strong> Context-aware response generation with multi-document reasoning</li>
+          <li><strong>Citation System:</strong> Automatic source attribution with document references</li>
+        </ul>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>Conversation Memory:</strong> Multi-turn dialogue with context retention across questions</li>
+          <li><strong>Multi-Document Synthesis:</strong> Combines information from multiple sources into coherent responses</li>
+          <li><strong>100% Citation Accuracy:</strong> Every factual claim linked to source document with page numbers</li>
+          <li><strong>Semantic Search:</strong> Understanding intent beyond keyword matching</li>
+          <li><strong>Healthcare Compliance:</strong> Audit logging and access controls meeting regulatory requirements</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Technical Implementation</h2>
+
+        <h3>Technology Stack</h3>
+        <ul>
+          <li><strong>LLM Platform:</strong> GCP Vertex AI for model hosting and inference</li>
+          <li><strong>RAG Framework:</strong> LangChain for retrieval and orchestration logic</li>
+          <li><strong>Vector Database:</strong> Pinecone/Weaviate for semantic search and retrieval</li>
+          <li><strong>Document Processing:</strong> PyMuPDF, python-docx for multi-format parsing</li>
+          <li><strong>Embedding Models:</strong> OpenAI embeddings / GCP text-embedding models</li>
+          <li><strong>Backend:</strong> Python with FastAPI for REST API endpoints</li>
+        </ul>
+
+        <h3>Document Processing Pipeline</h3>
+        <p>Automated chunking strategy optimized for policy documents:</p>
+        <ul>
+          <li><strong>Structure Preservation:</strong> Detect and preserve document sections, headers, and hierarchies</li>
+          <li><strong>Semantic Boundaries:</strong> Split at natural boundaries (paragraphs, sections) rather than arbitrary character counts</li>
+          <li><strong>Overlap Strategy:</strong> 10% chunk overlap to maintain context across boundaries</li>
+          <li><strong>Metadata Enrichment:</strong> Tag chunks with document title, section, page number, last updated date</li>
+          <li><strong>Quality Validation:</strong> Automated checks for chunk coherence and completeness</li>
+        </ul>
+
+        <h3>Retrieval Strategy</h3>
+        <p>Hybrid approach combining multiple retrieval methods:</p>
+        <ul>
+          <li><strong>Dense Retrieval:</strong> Vector similarity search using embeddings (primary method)</li>
+          <li><strong>Sparse Retrieval:</strong> BM25 keyword matching for specific terms/codes</li>
+          <li><strong>Re-ranking:</strong> Cross-encoder model to refine top-k retrieval results</li>
+          <li><strong>Contextual Compression:</strong> Filter retrieved chunks for relevance before LLM processing</li>
+        </ul>
+
+        <h3>Conversation Memory Implementation</h3>
+        <ul>
+          <li>Session-based conversation history tracking</li>
+          <li>Context window management for long conversations</li>
+          <li>Intelligent summarization of older conversation turns</li>
+          <li>Persistence layer for conversation recovery</li>
+        </ul>
+
+        <h3>Citation & Verification System</h3>
+        <p>Ensuring accuracy and traceability:</p>
+        <ul>
+          <li>Every response includes source document references with page numbers</li>
+          <li>Inline citations linked to specific retrieved chunks</li>
+          <li>Confidence scoring for generated responses</li>
+          <li>Fallback to "unable to answer" for low-confidence queries</li>
+          <li>Human verification workflow for critical policy questions</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Results & Impact</h2>
+        <div class="grid-2">
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">500+</h3>
+            <p style="color: var(--text-light);">Policy documents processed</p>
+          </div>
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">100%</h3>
+            <p style="color: var(--text-light);">Citation accuracy achieved</p>
+          </div>
+        </div>
+        <div class="grid-2" style="margin-top: 1rem;">
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);"><3s</h3>
+            <p style="color: var(--text-light);">Average query response time</p>
+          </div>
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">85%</h3>
+            <p style="color: var(--text-light);">Reduction in policy lookup time</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">User Impact</h3>
+        <ul>
+          <li>Employees can find policy information in seconds instead of hours</li>
+          <li>Reduced dependency on compliance team for routine policy questions</li>
+          <li>Improved accuracy in policy interpretation through consistent AI responses</li>
+          <li>Complete audit trail for regulatory compliance requirements</li>
+          <li>Multi-document synthesis enables complex policy analysis</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Lessons Learned</h2>
+        <ul>
+          <li><strong>Chunking strategy is critical:</strong> Semantic-aware chunking that preserves document structure outperformed fixed-size chunking by 30% in retrieval accuracy</li>
+          <li><strong>Citations build trust:</strong> 100% citation accuracy was non-negotiable for healthcare adoption; users need to verify source documents</li>
+          <li><strong>Hybrid retrieval wins:</strong> Combining dense and sparse retrieval caught edge cases that either method alone would miss</li>
+          <li><strong>Context windows matter:</strong> Conversation memory significantly improved multi-turn dialogue quality</li>
+          <li><strong>Failure modes are important:</strong> System must gracefully handle queries it cannot answer rather than hallucinating responses</li>
+          <li><strong>Compliance integration essential:</strong> Audit logging and access controls built from day one simplified regulatory approval</li>
+        </ul>
+      </section>
+    </article>
+
+    <section style="margin-top: 2rem; text-align: center;">
+      <a href="../projects.html" class="btn btn-secondary">← Back to All Projects</a>
+      <a href="../contact.html" class="btn btn-primary" style="margin-left: 1rem;">Discuss This Project</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Tolu Olukoga. All rights reserved.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Tolu Olukoga</title>
+  <meta name="description" content="Machine learning and AI projects by Tolu Olukoga, featuring personalization systems, predictive analytics, and MLOps implementations."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="nav-logo">Tolu Olukoga</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container">
+      <h1>Projects</h1>
+      <p class="subtitle">Machine Learning & AI Solutions</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <button class="btn btn-primary filter-btn active" data-filter="all">All Projects</button>
+        <button class="btn btn-secondary filter-btn" data-filter="agentic-ai">Agentic AI</button>
+        <button class="btn btn-secondary filter-btn" data-filter="rag">RAG Systems</button>
+        <button class="btn btn-secondary filter-btn" data-filter="mlops">MLOps</button>
+        <button class="btn btn-secondary filter-btn" data-filter="personalization">Personalization</button>
+      </div>
+
+      <div class="grid-3">
+        <div class="card project-card" data-category="agentic-ai">
+          <h3 class="card-title">Thoughtful AI Customer Support Agent</h3>
+          <div class="card-tags">
+            <span class="tag primary">Streamlit</span>
+            <span class="tag primary">TF-IDF</span>
+            <span class="tag primary">scikit-learn</span>
+            <span class="tag primary">NLP</span>
+          </div>
+          <p class="card-excerpt">Conversational AI agent for healthcare automation platform using intelligent question matching and semantic understanding. Built in 2 hours as part of an interview process demonstrating rapid prototyping and production-ready code quality.</p>
+          <p class="card-meta"><strong>Performance:</strong> Sub-100ms response time, 100% exact match accuracy, 80-95% semantic accuracy</p>
+          <a href="https://github.com/toluwee/thoughtful-ai-agent/tree/main" class="btn btn-link" target="_blank">View on GitHub →</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="text-align: center; margin-top: 3rem;">
+      <h2>Interested in collaborating?</h2>
+      <p>I'm always open to discussing new projects and opportunities.</p>
+      <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Tolu Olukoga. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

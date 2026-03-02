@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ML-Driven Personalization Engine | Tolu Olukoga</title>
+  <meta name="description" content="Production personalization system combining traditional ML and generative AI, generating $1.14M annual profit for 1.5M+ daily users."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="nav-logo">Tolu Olukoga</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" class="active">Projects</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header style="padding: 2rem 0;">
+    <div class="container" style="text-align: left;">
+      <p style="margin: 0; color: #cbd5e1;"><a href="../projects.html" style="color: #cbd5e1;">← Back to Projects</a></p>
+      <h1 style="margin: 1rem 0;">ML-Driven Personalization Engine</h1>
+      <div style="margin-top: 1rem;">
+        <span class="tag primary">PyTorch</span>
+        <span class="tag primary">React</span>
+        <span class="tag primary">TypeScript</span>
+        <span class="tag primary">Kubernetes</span>
+        <span class="tag primary">RAG</span>
+        <span class="tag primary">Transformers</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <article style="max-width: 800px; margin: 0 auto;">
+      <section class="card">
+        <h2 style="margin-top: 0;">Overview</h2>
+        <p>End-to-end machine learning personalization system designed and deployed at Expedia Group, processing 1.5M+ daily user interactions. The system combines traditional ML models with generative AI, fine-tuned transformer models, and RAG pipelines integrated into a React/Next.js frontend, generating $1.14M annual profit increase.</p>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Problem Statement</h2>
+        <p>Travel personalization at scale requires addressing multiple technical and business challenges:</p>
+        <ul>
+          <li><strong>Massive Scale:</strong> 1.5M+ daily user interactions requiring real-time personalization</li>
+          <li><strong>Conversion Optimization:</strong> Need to improve booking rates and revenue per user</li>
+          <li><strong>Content Relevance:</strong> Travelers need personalized recommendations matching their preferences and context</li>
+          <li><strong>Latency Constraints:</strong> Personalization must not degrade page load times or user experience</li>
+          <li><strong>Model Freshness:</strong> Travel patterns change rapidly; models need continuous updates</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Solution Approach</h2>
+        <p>Architected a hybrid personalization system combining traditional ML, generative AI, and modern frontend technologies to deliver relevant, contextual experiences.</p>
+
+        <h3>System Architecture</h3>
+        <p>Multi-layer personalization stack:</p>
+        <ul>
+          <li><strong>Traditional ML Models:</strong> Ensemble methods (XGBoost, Neural Networks) for conversion prediction and customer segmentation</li>
+          <li><strong>Fine-Tuned Transformers:</strong> PyTorch-based models for understanding user intent and preferences</li>
+          <li><strong>RAG Pipeline:</strong> Retrieval-augmented generation for personalized content and recommendations</li>
+          <li><strong>Frontend Integration:</strong> React/Next.js with TypeScript interfaces and Node.js APIs</li>
+          <li><strong>MLOps Infrastructure:</strong> Kubernetes-based deployment with automated training and monitoring</li>
+        </ul>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>Real-Time Personalization:</strong> Sub-100ms inference for seamless user experience</li>
+          <li><strong>Multi-Model Ensemble:</strong> Combining multiple model types for robust predictions</li>
+          <li><strong>Customer Segmentation:</strong> Automated segmentation enabling targeted experiences</li>
+          <li><strong>Continuous Learning:</strong> Automated retraining pipelines maintaining model freshness</li>
+          <li><strong>A/B Testing Framework:</strong> Rigorous experimentation for model validation</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Technical Implementation</h2>
+
+        <h3>Technology Stack</h3>
+        <ul>
+          <li><strong>ML Frameworks:</strong> PyTorch (transformers), XGBoost, TensorFlow, Scikit-learn</li>
+          <li><strong>Frontend:</strong> React, Next.js, TypeScript for type-safe interfaces</li>
+          <li><strong>Backend:</strong> Node.js APIs, Python microservices</li>
+          <li><strong>Infrastructure:</strong> Kubernetes, Docker, AWS SageMaker</li>
+          <li><strong>Data Processing:</strong> PySpark for distributed ETL</li>
+          <li><strong>MLOps:</strong> MLflow, Kubernetes, CI/CD pipelines</li>
+        </ul>
+
+        <h3>ML Model Development</h3>
+
+        <h4>Customer Segmentation Models</h4>
+        <ul>
+          <li>Ensemble methods combining XGBoost and Neural Networks</li>
+          <li>Feature engineering across behavioral, value, and engagement dimensions</li>
+          <li>Real-time segment assignment for personalization</li>
+          <li>Automated retraining on evolving customer patterns</li>
+        </ul>
+
+        <h4>Fine-Tuned Transformer Models</h4>
+        <ul>
+          <li>PyTorch-based transformer fine-tuning for travel intent understanding</li>
+          <li>Transfer learning from pre-trained language models</li>
+          <li>Custom tokenization for travel domain terminology</li>
+          <li>Multi-task learning for joint optimization</li>
+        </ul>
+
+        <h4>RAG Pipeline Integration</h4>
+        <ul>
+          <li>Retrieval system for personalized destination and hotel recommendations</li>
+          <li>Context-aware generation using user history and preferences</li>
+          <li>Semantic search across millions of travel offerings</li>
+          <li>Integration with traditional ranking models for hybrid approach</li>
+        </ul>
+
+        <h3>Frontend Integration</h3>
+        <p>Seamless ML-powered personalization in user interface:</p>
+        <ul>
+          <li>TypeScript interfaces for type-safe ML model responses</li>
+          <li>React components consuming personalization APIs</li>
+          <li>Client-side caching for improved performance</li>
+          <li>Progressive enhancement for graceful degradation</li>
+          <li>Real-time updates based on user interactions</li>
+        </ul>
+
+        <h3>MLOps Infrastructure</h3>
+        <p>Production-grade ML operations:</p>
+        <ul>
+          <li>Kubernetes-based model serving with auto-scaling</li>
+          <li>Automated model training, validation, and deployment pipelines</li>
+          <li>99.9% uptime through redundancy and health checks</li>
+          <li>Comprehensive monitoring of model performance and system health</li>
+          <li>Prototype-to-production pipeline reducing deployment time by 40%</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Results & Impact</h2>
+        <div class="grid-2">
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">$1.14M</h3>
+            <p style="color: var(--text-light);">Annual profit increase</p>
+          </div>
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">0.6 BPS</h3>
+            <p style="color: var(--text-light);">Conversion rate improvement</p>
+          </div>
+        </div>
+        <div class="grid-2" style="margin-top: 1rem;">
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">1.5M+</h3>
+            <p style="color: var(--text-light);">Daily user interactions</p>
+          </div>
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">99.9%</h3>
+            <p style="color: var(--text-light);">System uptime achieved</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Business Outcomes</h3>
+        <ul>
+          <li>0.21% improvement in CVR (conversion rate) across platform</li>
+          <li>Higher user engagement through relevant content and recommendations</li>
+          <li>Reduced prototype-to-production time by 40% via MLOps automation</li>
+          <li>Customer segmentation models enabled platform-wide personalization</li>
+          <li>Established experimentation frameworks adopted across multiple teams</li>
+        </ul>
+
+        <h3>Technical Achievements</h3>
+        <ul>
+          <li>Successfully integrated generative AI with traditional ML in production</li>
+          <li>Achieved sub-100ms latency for real-time personalization</li>
+          <li>Built type-safe frontend interfaces for ML model consumption</li>
+          <li>Established scalable MLOps patterns for continuous deployment</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Lessons Learned</h2>
+        <ul>
+          <li><strong>Hybrid approaches win:</strong> Combining traditional ML with generative AI leveraged strengths of both paradigms</li>
+          <li><strong>Frontend integration matters:</strong> TypeScript interfaces improved developer experience and reduced integration bugs</li>
+          <li><strong>MLOps is non-negotiable:</strong> Automated pipelines essential for maintaining model freshness at scale</li>
+          <li><strong>Experimentation rigor pays off:</strong> Robust A/B testing framework prevented deployment of underperforming models</li>
+          <li><strong>Latency optimization critical:</strong> Sub-100ms requirement drove architectural decisions around caching and model optimization</li>
+          <li><strong>Cross-functional collaboration essential:</strong> Success required tight coordination between ML, engineering, product, and business teams</li>
+        </ul>
+      </section>
+    </article>
+
+    <section style="margin-top: 2rem; text-align: center;">
+      <a href="../projects.html" class="btn btn-secondary">← Back to All Projects</a>
+      <a href="../contact.html" class="btn btn-primary" style="margin-left: 1rem;">Discuss This Project</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Tolu Olukoga. All rights reserved.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

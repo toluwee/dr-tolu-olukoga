@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Segmentation AI | Tolu Olukoga</title>
+  <meta name="description" content="Automated customer segmentation system that reduced analysis time by 2000%, from 6 hours to 18 minutes using ML clustering."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="nav-logo">Tolu Olukoga</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" class="active">Projects</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header style="padding: 2rem 0;">
+    <div class="container" style="text-align: left;">
+      <p style="margin: 0; color: #cbd5e1;"><a href="../projects.html" style="color: #cbd5e1;">← Back to Projects</a></p>
+      <h1 style="margin: 1rem 0;">Customer Segmentation AI</h1>
+      <div style="margin-top: 1rem;">
+        <span class="tag primary">Python</span>
+        <span class="tag primary">Scikit-learn</span>
+        <span class="tag primary">AWS</span>
+        <span class="tag primary">PySpark</span>
+        <span class="tag primary">MLflow</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <article style="max-width: 800px; margin: 0 auto;">
+      <section class="card">
+        <h2 style="margin-top: 0;">Overview</h2>
+        <p>Automated customer segmentation system that transformed a manual 6-hour process into an 18-minute automated workflow, achieving a 2000% efficiency gain while improving segmentation quality and business outcomes.</p>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Problem Statement</h2>
+        <p>The marketing analytics team faced significant operational challenges:</p>
+        <ul>
+          <li><strong>Time Bottleneck:</strong> Manual customer segmentation took 6 hours per campaign, limiting frequency and agility</li>
+          <li><strong>Inconsistency:</strong> Different analysts applied varying criteria, leading to non-reproducible results</li>
+          <li><strong>Limited Dimensions:</strong> Manual analysis could only consider 3-4 customer attributes simultaneously</li>
+          <li><strong>Scaling Issues:</strong> Growing customer base made manual segmentation increasingly impractical</li>
+          <li><strong>Delayed Insights:</strong> Slow turnaround prevented real-time campaign optimization</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Solution Approach</h2>
+        <p>Developed an end-to-end automated segmentation pipeline leveraging advanced ML clustering algorithms and cloud infrastructure.</p>
+
+        <h3>Architecture</h3>
+        <p>The system consists of three primary components:</p>
+        <ul>
+          <li><strong>Feature Engineering Pipeline:</strong> Automated extraction and transformation of behavioral, value, engagement, and temporal features</li>
+          <li><strong>Clustering Engine:</strong> Ensemble approach selecting optimal algorithms (K-means, DBSCAN, GMM) based on data characteristics</li>
+          <li><strong>Validation & Interpretation:</strong> Automated quality assessment and natural language segment profiling</li>
+        </ul>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>Multi-dimensional Feature Engineering:</strong> 40+ engineered features spanning purchase behavior, engagement patterns, and value metrics</li>
+          <li><strong>Adaptive Algorithm Selection:</strong> System automatically chooses the best clustering approach using silhouette analysis</li>
+          <li><strong>Incremental Updates:</strong> Efficiently processes new customers without full recomputation</li>
+          <li><strong>Business Validation:</strong> Segments validated against revenue, conversion, and retention metrics</li>
+          <li><strong>Automated Profiling:</strong> Natural language descriptions of each segment's characteristics</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Technical Implementation</h2>
+
+        <h3>Technology Stack</h3>
+        <ul>
+          <li><strong>Data Processing:</strong> PySpark for distributed feature engineering, AWS S3 for feature storage</li>
+          <li><strong>Machine Learning:</strong> Scikit-learn (clustering algorithms), Optuna (hyperparameter tuning)</li>
+          <li><strong>Infrastructure:</strong> AWS SageMaker (model training), Lambda (orchestration), MLflow (experiment tracking)</li>
+          <li><strong>Monitoring:</strong> CloudWatch for pipeline health, custom dashboards for segment quality metrics</li>
+        </ul>
+
+        <h3>Feature Engineering Details</h3>
+        <p>Engineered features across four key dimensions:</p>
+        <ul>
+          <li><strong>Behavioral:</strong> Purchase frequency, recency, product category preferences, search patterns</li>
+          <li><strong>Value:</strong> Customer lifetime value, average order value, discount sensitivity, price tier preference</li>
+          <li><strong>Engagement:</strong> Email open rates, click-through rates, session duration, content interaction depth</li>
+          <li><strong>Temporal:</strong> Seasonality patterns, weekday/weekend behavior, time-since-last-purchase</li>
+        </ul>
+
+        <h3>Optimization Techniques</h3>
+        <p>Achieved 18-minute runtime through:</p>
+        <ul>
+          <li>Incremental clustering for existing customers (only full clustering for new cohorts)</li>
+          <li>Dimensionality reduction (PCA to 20 components) maintaining 95% variance</li>
+          <li>Parallel algorithm evaluation using SageMaker distributed training</li>
+          <li>Feature caching with versioning for reproducibility</li>
+          <li>Approximate nearest neighbor search for segment assignment</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Results & Impact</h2>
+        <div class="grid-2">
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">2000%</h3>
+            <p style="color: var(--text-light);">Time reduction (6 hours → 18 minutes)</p>
+          </div>
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">15%</h3>
+            <p style="color: var(--text-light);">Improvement in campaign targeting accuracy</p>
+          </div>
+        </div>
+        <div class="grid-2" style="margin-top: 1rem;">
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">7x</h3>
+            <p style="color: var(--text-light);">Increase in segmentation frequency (weekly → daily)</p>
+          </div>
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">100%</h3>
+            <p style="color: var(--text-light);">Consistency in segmentation criteria</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Business Outcomes</h3>
+        <ul>
+          <li>Enabled daily segmentation cadence, allowing real-time campaign optimization</li>
+          <li>Marketing team freed up 30 hours per week for strategic work</li>
+          <li>Improved customer targeting led to higher conversion rates and ROI</li>
+          <li>System adopted by 3 additional business units within 6 months</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Lessons Learned</h2>
+        <ul>
+          <li><strong>Feature quality beats algorithm complexity:</strong> Investing in domain-specific feature engineering produced better results than sophisticated clustering algorithms on generic features</li>
+          <li><strong>Validate with business metrics early:</strong> Technical clustering metrics (silhouette score) don't always correlate with business value; established joint validation framework</li>
+          <li><strong>Build trust through parallel running:</strong> Ran automated and manual segmentation side-by-side for 3 months to demonstrate reliability before full transition</li>
+          <li><strong>Incremental optimization is key:</strong> First version took 2 hours; profiling identified bottlenecks, leading to iterative improvements</li>
+          <li><strong>Documentation and interpretability matter:</strong> Natural language segment descriptions critical for stakeholder adoption</li>
+        </ul>
+      </section>
+    </article>
+
+    <section style="margin-top: 2rem; text-align: center;">
+      <a href="../projects.html" class="btn btn-secondary">← Back to All Projects</a>
+      <a href="../contact.html" class="btn btn-primary" style="margin-left: 1rem;">Discuss This Project</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Tolu Olukoga. All rights reserved.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Repeat Search Prediction Model | Tolu Olukoga</title>
+  <meta name="description" content="Predictive model identifying repeat search patterns to improve user engagement for 1.5M+ monthly users in the travel industry."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="nav-logo">Tolu Olukoga</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" class="active">Projects</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header style="padding: 2rem 0;">
+    <div class="container" style="text-align: left;">
+      <p style="margin: 0; color: #cbd5e1;"><a href="../projects.html" style="color: #cbd5e1;">← Back to Projects</a></p>
+      <h1 style="margin: 1rem 0;">Repeat Search Prediction Model</h1>
+      <div style="margin-top: 1rem;">
+        <span class="tag primary">TensorFlow</span>
+        <span class="tag primary">PySpark</span>
+        <span class="tag primary">MLflow</span>
+        <span class="tag primary">AWS SageMaker</span>
+        <span class="tag primary">Statistical Testing</span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <article style="max-width: 800px; margin: 0 auto;">
+      <section class="card">
+        <h2 style="margin-top: 0;">Overview</h2>
+        <p>Built and deployed deep learning models to predict the likelihood of users performing repeat searches in the travel domain. The model powers recommendation systems serving 1.5M+ monthly users, improving engagement and conversion rates.</p>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Problem Statement</h2>
+        <p>Understanding user search behavior is critical for personalization in travel booking:</p>
+        <ul>
+          <li><strong>Engagement Optimization:</strong> Need to identify users likely to return and re-search to trigger targeted interventions</li>
+          <li><strong>Recommendation Timing:</strong> Optimal moment to present recommendations depends on predicted search likelihood</li>
+          <li><strong>Resource Allocation:</strong> Finite email/notification budget requires prioritizing high-propensity users</li>
+          <li><strong>Complex Patterns:</strong> Search behavior influenced by dozens of factors (trip characteristics, user history, temporal patterns)</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Solution Approach</h2>
+        <p>Developed a multi-stage ML pipeline combining feature engineering, deep learning, and rigorous statistical validation.</p>
+
+        <h3>Architecture</h3>
+        <p>End-to-end system with three core components:</p>
+        <ul>
+          <li><strong>Feature Engineering:</strong> 100+ features extracted from search logs, user profiles, and temporal patterns</li>
+          <li><strong>Prediction Model:</strong> Deep neural network with attention mechanisms for sequential search behavior</li>
+          <li><strong>Validation Framework:</strong> Comprehensive A/B testing and statistical analysis to ensure business impact</li>
+        </ul>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>Sequential Modeling:</strong> Captures temporal dependencies in user search patterns using recurrent layers</li>
+          <li><strong>Multi-task Learning:</strong> Jointly predicts repeat search likelihood and time-to-next-search</li>
+          <li><strong>Feature Importance Tracking:</strong> SHAP values for model interpretability and debugging</li>
+          <li><strong>Real-time Inference:</strong> Sub-50ms prediction latency for live recommendation serving</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Technical Implementation</h2>
+
+        <h3>Technology Stack</h3>
+        <ul>
+          <li><strong>Data Processing:</strong> PySpark for distributed ETL on petabyte-scale search logs</li>
+          <li><strong>Model Development:</strong> TensorFlow 2.x with Keras API for deep learning architecture</li>
+          <li><strong>Deployment:</strong> AWS SageMaker for model hosting, API Gateway for inference endpoint</li>
+          <li><strong>Experiment Tracking:</strong> MLflow for model versioning and metrics logging</li>
+          <li><strong>Validation:</strong> Custom statistical testing framework for online metric evaluation</li>
+        </ul>
+
+        <h3>Model Architecture Details</h3>
+        <p>Deep neural network with the following architecture:</p>
+        <ul>
+          <li>Embedding layers for categorical features (destination, hotel chain, device type)</li>
+          <li>LSTM layers for sequential search history (last 10 searches)</li>
+          <li>Attention mechanism to identify influential past searches</li>
+          <li>Dense layers with batch normalization and dropout for regularization</li>
+          <li>Multi-task output heads for probability and timing predictions</li>
+        </ul>
+
+        <h3>Feature Engineering</h3>
+        <p>Engineered features across multiple categories:</p>
+        <ul>
+          <li><strong>Search Characteristics:</strong> Destination popularity, trip duration, lead time, price range</li>
+          <li><strong>User History:</strong> Past booking rate, search frequency, device diversity, loyalty status</li>
+          <li><strong>Temporal Patterns:</strong> Day of week, seasonality, time since last search, browsing session duration</li>
+          <li><strong>Contextual Signals:</strong> Search funnel position, filters applied, sort preferences, page depth</li>
+        </ul>
+
+        <h3>Training & Optimization</h3>
+        <ul>
+          <li>Dataset: 50M search sessions over 6-month training window</li>
+          <li>Class imbalance handling: Weighted loss function with SMOTE oversampling</li>
+          <li>Hyperparameter tuning: Bayesian optimization with Optuna (500+ trials)</li>
+          <li>Regularization: L2 weight decay, dropout (0.3), early stopping</li>
+          <li>Training time: 8 hours on 4x V100 GPUs</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Results & Impact</h2>
+        <div class="grid-2">
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">0.83</h3>
+            <p style="color: var(--text-light);">AUC-ROC score on holdout test set</p>
+          </div>
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">12%</h3>
+            <p style="color: var(--text-light);">Increase in recommendation click-through rate</p>
+          </div>
+        </div>
+        <div class="grid-2" style="margin-top: 1rem;">
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);"><50ms</h3>
+            <p style="color: var(--text-light);">p95 inference latency at scale</p>
+          </div>
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">1.5M+</h3>
+            <p style="color: var(--text-light);">Monthly users served</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">A/B Test Results</h3>
+        <ul>
+          <li>8% increase in user re-engagement rate (statistically significant, p < 0.01)</li>
+          <li>6% improvement in conversion rate for targeted recommendations</li>
+          <li>14% reduction in irrelevant notifications sent (improved user experience)</li>
+          <li>Positive impact on user satisfaction scores based on post-visit surveys</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Lessons Learned</h2>
+        <ul>
+          <li><strong>Sequential information is critical:</strong> Model performance improved significantly when incorporating search history vs. treating searches independently</li>
+          <li><strong>Class imbalance matters:</strong> Initial models struggled due to low repeat search rates; proper handling improved precision/recall balance</li>
+          <li><strong>Interpretability builds trust:</strong> SHAP explanations helped stakeholders understand and trust model decisions</li>
+          <li><strong>Online metrics > offline metrics:</strong> Models with similar offline AUC showed different business impact; always validate with A/B tests</li>
+          <li><strong>Inference latency is non-negotiable:</strong> Required significant optimization to meet sub-50ms requirement for real-time serving</li>
+        </ul>
+      </section>
+    </article>
+
+    <section style="margin-top: 2rem; text-align: center;">
+      <a href="../projects.html" class="btn btn-secondary">← Back to All Projects</a>
+      <a href="../contact.html" class="btn btn-primary" style="margin-left: 1rem;">Discuss This Project</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Tolu Olukoga. All rights reserved.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personalization Engine Architecture | Tolu Olukoga</title>
+  <meta name="description" content="Scalable ML infrastructure for real-time personalization achieving 99.9% uptime and sub-100ms latency serving 1.5M+ monthly users."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="nav-logo">Tolu Olukoga</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" class="active">Projects</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header style="padding: 2rem 0;">
+    <div class="container" style="text-align: left;">
+      <p style="margin: 0; color: #cbd5e1;"><a href="../projects.html" style="color: #cbd5e1;">← Back to Projects</a></p>
+      <h1 style="margin: 1rem 0;">Personalization Engine Architecture</h1>
+      <div style="margin-top: 1rem;">
+        <span class="tag primary">AWS SageMaker</span>
+        <span class="tag primary">Docker</span>
+        <span class="tag primary">Kubernetes</span>
+        <span class="tag primary">MLOps</span>
+        <span class="tag primary">Redis</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <article style="max-width: 800px; margin: 0 auto;">
+      <section class="card">
+        <h2 style="margin-top: 0;">Overview</h2>
+        <p>Architected and deployed a production-grade ML infrastructure powering real-time personalization for 1.5M+ monthly users. The system achieves 99.9% uptime with sub-100ms inference latency through careful system design, caching strategies, and automated monitoring.</p>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Problem Statement</h2>
+        <p>Building personalization at scale requires solving multiple complex challenges:</p>
+        <ul>
+          <li><strong>Latency Requirements:</strong> Must deliver predictions in <100ms to avoid degrading user experience</li>
+          <li><strong>High Availability:</strong> Downtime directly impacts revenue; 99.9% uptime SLA required</li>
+          <li><strong>Scale:</strong> Handle 500+ requests per second with traffic spikes during peak booking periods</li>
+          <li><strong>Model Freshness:</strong> Balance between model updates and system stability</li>
+          <li><strong>Monitoring Complexity:</strong> Track both model performance and infrastructure health</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Solution Approach</h2>
+        <p>Designed a microservices-based architecture with multiple layers of optimization for performance and reliability.</p>
+
+        <h3>System Architecture</h3>
+        <p>Multi-tier architecture with separation of concerns:</p>
+        <ul>
+          <li><strong>API Gateway Layer:</strong> Request routing, authentication, rate limiting</li>
+          <li><strong>Caching Layer:</strong> Redis cluster for hot path optimization</li>
+          <li><strong>Inference Layer:</strong> Containerized model serving with auto-scaling</li>
+          <li><strong>Feature Store:</strong> Pre-computed features for low-latency access</li>
+          <li><strong>Monitoring Layer:</strong> Real-time metrics and alerting</li>
+        </ul>
+
+        <h3>Key Design Decisions</h3>
+        <ul>
+          <li><strong>Containerization:</strong> Docker containers for consistent deployment across environments</li>
+          <li><strong>Orchestration:</strong> Kubernetes for auto-scaling and self-healing</li>
+          <li><strong>Multi-model Serving:</strong> SageMaker multi-model endpoints for efficient resource utilization</li>
+          <li><strong>Graceful Degradation:</strong> Fallback to rule-based recommendations if ML inference fails</li>
+          <li><strong>Blue-Green Deployment:</strong> Zero-downtime model updates with automated rollback</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Technical Implementation</h2>
+
+        <h3>Technology Stack</h3>
+        <ul>
+          <li><strong>Model Hosting:</strong> AWS SageMaker for managed inference endpoints</li>
+          <li><strong>Containerization:</strong> Docker with optimized TensorFlow Serving images</li>
+          <li><strong>Orchestration:</strong> Kubernetes on EKS for container management</li>
+          <li><strong>Caching:</strong> Redis Cluster with read replicas for high availability</li>
+          <li><strong>Load Balancing:</strong> Application Load Balancer with health checks</li>
+          <li><strong>Monitoring:</strong> CloudWatch, Grafana, PagerDuty for alerting</li>
+        </ul>
+
+        <h3>Performance Optimization Strategies</h3>
+
+        <h4>Caching Architecture</h4>
+        <ul>
+          <li>Three-tier caching: L1 (in-process), L2 (Redis), L3 (database)</li>
+          <li>Cache warm-up strategies for popular items/users</li>
+          <li>Smart invalidation based on user activity patterns</li>
+          <li>95% cache hit rate achieved through predictive pre-warming</li>
+        </ul>
+
+        <h4>Model Optimization</h4>
+        <ul>
+          <li>Model quantization (INT8) reducing size by 4x with minimal accuracy loss</li>
+          <li>TensorRT optimization for GPU inference acceleration</li>
+          <li>Batch inference for non-real-time predictions</li>
+          <li>Model distillation for latency-critical paths</li>
+        </ul>
+
+        <h4>Infrastructure Optimization</h4>
+        <ul>
+          <li>Auto-scaling policies based on custom CloudWatch metrics</li>
+          <li>Spot instances for batch workloads (60% cost savings)</li>
+          <li>Multi-AZ deployment for fault tolerance</li>
+          <li>Regional replication for disaster recovery</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">MLOps Pipeline</h2>
+
+        <h3>Continuous Integration/Deployment</h3>
+        <ul>
+          <li>Automated model validation against champion model</li>
+          <li>A/B testing framework for gradual rollout (5% → 25% → 100%)</li>
+          <li>Automated performance regression tests</li>
+          <li>Canary deployments with automatic rollback on anomaly detection</li>
+        </ul>
+
+        <h3>Monitoring & Alerting</h3>
+        <ul>
+          <li><strong>Model Performance:</strong> Prediction distribution shifts, confidence scores, business KPIs</li>
+          <li><strong>System Health:</strong> Latency (p50/p95/p99), error rates, throughput</li>
+          <li><strong>Resource Utilization:</strong> CPU, memory, GPU usage, auto-scaling triggers</li>
+          <li><strong>Data Quality:</strong> Feature distribution monitoring, missing value rates</li>
+        </ul>
+
+        <h3>Automated Remediation</h3>
+        <ul>
+          <li>Auto-scaling triggers based on latency and CPU thresholds</li>
+          <li>Automated model rollback on performance degradation</li>
+          <li>Circuit breakers for failing dependencies</li>
+          <li>Self-healing infrastructure through Kubernetes</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Results & Impact</h2>
+        <div class="grid-2">
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">99.9%</h3>
+            <p style="color: var(--text-light);">System uptime (SLA compliance)</p>
+          </div>
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);"><100ms</h3>
+            <p style="color: var(--text-light);">p99 inference latency</p>
+          </div>
+        </div>
+        <div class="grid-2" style="margin-top: 1rem;">
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">1.5M+</h3>
+            <p style="color: var(--text-light);">Monthly active users served</p>
+          </div>
+          <div>
+            <h3 style="font-size: 2rem; margin: 0; color: var(--accent);">30%</h3>
+            <p style="color: var(--text-light);">Reduction in maintenance overhead</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Operational Metrics</h3>
+        <ul>
+          <li>Zero customer-impacting outages in 12-month period</li>
+          <li>Average latency: 45ms (well under 100ms target)</li>
+          <li>Successfully handled 5x traffic spike during holiday season</li>
+          <li>Model deployment frequency increased from monthly to weekly</li>
+          <li>Reduced infrastructure costs by 25% through optimization</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Lessons Learned</h2>
+        <ul>
+          <li><strong>Cache everything cacheable:</strong> Achieved 95% cache hit rate through aggressive caching strategy; single biggest latency improvement</li>
+          <li><strong>Monitoring is not optional:</strong> Comprehensive monitoring prevented multiple potential outages through early detection</li>
+          <li><strong>Plan for failure:</strong> Graceful degradation and fallbacks essential; circuit breakers saved us during dependency failures</li>
+          <li><strong>Optimize the hot path:</strong> 80% of latency improvements came from optimizing the 20% most common code paths</li>
+          <li><strong>Automate everything:</strong> Automation reduced deployment time from 4 hours to 15 minutes and eliminated human error</li>
+          <li><strong>Cost optimization matters:</strong> Spot instances and right-sizing saved 40% on infrastructure costs without performance impact</li>
+        </ul>
+      </section>
+    </article>
+
+    <section style="margin-top: 2rem; text-align: center;">
+      <a href="../projects.html" class="btn btn-secondary">← Back to All Projects</a>
+      <a href="../contact.html" class="btn btn-primary" style="margin-left: 1rem;">Discuss This Project</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Tolu Olukoga. All rights reserved.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
