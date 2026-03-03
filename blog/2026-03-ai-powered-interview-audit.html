@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Interview Game Changed: A Senior Engineer's Guide to Proving You Can Think, Not Just Type | Tolu Olukoga</title>
-  <meta name="description" content="After years building ML systems and surviving countless interviews, I've watched AI fundamentally change what interviewers actually care about. Here's what I wish someone had told me about preparing for the post-ChatGPT technical interview."/>
+  <title>The Interview Game Changed: What Flora's Journey Taught Me About Proving You Can Think, Not Just Type | Tolu Olukoga</title>
+  <meta name="description" content="My colleague Flora recently went through interview rounds at multiple companies and discovered something surprising: nobody asked her to write code. They asked her to judge it. Her experience reveals what technical interviews actually test in the age of AI."/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../style.css"/>
   <style>
@@ -78,10 +78,10 @@
   <header style="padding: 2rem 0;">
     <div class="container" style="text-align: left;">
       <p style="margin: 0; color: #cbd5e1;"><a href="../blog.html" style="color: #cbd5e1;">← Back to Blog</a></p>
-      <h1 style="margin: 1rem 0;">The Interview Game Changed: A Senior Engineer's Guide to Proving You Can Think, Not Just Type</h1>
+      <h1 style="margin: 1rem 0;">The Interview Game Changed: What Flora's Journey Taught Me About Proving You Can Think, Not Just Type</h1>
       <div style="color: #cbd5e1; font-size: 0.95rem;">
         <span>March 1, 2026</span> •
-        <span>7 min read</span>
+        <span>8 min read</span>
       </div>
       <div style="margin-top: 1rem;">
         <span class="tag" style="background-color: #3b82f6; color: white;">Career Development</span>
@@ -96,36 +96,36 @@
     <article>
       <div class="card" style="max-width: 800px; margin: 0 auto;">
         <p><img src="../images/system_auditor1.png" alt="Interview Audit Concept"></p>
-<p>Last month, I interviewed at three different companies. Each one gave me the same task: review code that ChatGPT had generated and tell them what was wrong with it.</p>
+<p>Last month, my colleague Flora interviewed at three different companies. Each one gave her the same task: review code that ChatGPT had generated and tell them what was wrong with it.</p>
 <p>Not &quot;write me a function.&quot; Not &quot;explain this algorithm.&quot; Not even &quot;design this system from scratch.&quot;</p>
 <p>Just: &quot;Here&#39;s code that passes our unit tests. Would you ship it to production? Why or why not?&quot;</p>
-<p>This is the new reality. I recently read <a href="https://builtin.com/articles/audit-interview-scorecard">an article from Built In</a> describing this shift from the employer&#39;s side, and it crystallized something I&#39;ve been experiencing: <strong>we&#39;re not being hired to write code anymore. We&#39;re being hired to decide whether code should exist.</strong></p>
-<p>After building agentic AI systems and watching junior engineers learn to use Claude and ChatGPT before they learn to use Git, I&#39;ve realized the skill gap isn&#39;t syntax. It&#39;s judgment. Here&#39;s what I&#39;ve learned about preparing for this new interview landscape.</p>
-<h2>The Wake-Up Call: My First &quot;Audit Interview&quot;</h2>
-<p>Six months ago, I walked into what I thought would be a standard system design interview. The interviewer pulled up a Python service that handled user authentication. Clean code. Good variable names. Type hints everywhere. It even had docstrings.</p>
+<p>When Flora told me about this, it clicked. I recently read <a href="https://builtin.com/articles/audit-interview-scorecard">an article from Built In</a> describing this shift from the employer&#39;s side, and watching Flora&#39;s interview journey crystallized something we&#39;ve both been seeing in production: <strong>companies aren&#39;t hiring code generators anymore. They&#39;re hiring people who can decide whether code should exist.</strong></p>
+<p>After years building agentic AI systems and watching junior engineers learn to use Claude and ChatGPT before they learn to use Git, the skill gap is clear. It isn&#39;t syntax. It&#39;s judgment. Here&#39;s what Flora&#39;s experience taught both of us about the new interview landscape.</p>
+<h2>The Wake-Up Call: Flora&#39;s First &quot;Audit Interview&quot;</h2>
+<p>Six months ago, Flora walked into what she thought would be a standard system design interview. The interviewer pulled up a Python service that handled user authentication. Clean code. Good variable names. Type hints everywhere. It even had docstrings.</p>
 <p>&quot;ChatGPT wrote this,&quot; they said. &quot;You have 20 minutes. Tell me what happens when we deploy it.&quot;</p>
-<p>I panicked. This wasn&#39;t the game I&#39;d practiced. I&#39;d spent weeks on LeetCode. I could reverse a binary tree in my sleep. But nobody had asked me to be a code reviewer for an AI.</p>
-<p>I fumbled through it, caught the obvious SQL injection vulnerability, mentioned something about rate limiting, and called it done. I didn&#39;t get the job.</p>
+<p>Flora panicked. This wasn&#39;t the game she&#39;d practiced. She&#39;d spent weeks on LeetCode. She could reverse a binary tree in her sleep. But nobody had asked her to be a code reviewer for an AI.</p>
+<p>She fumbled through it, caught the obvious SQL injection vulnerability, mentioned something about rate limiting, and called it done. She didn&#39;t get the job.</p>
 <p>The feedback? &quot;You found the security issue, but you missed that this would fall over at scale. You didn&#39;t ask about our user base size. You didn&#39;t question the session storage strategy. You treated it like a code review, not a production readiness assessment.&quot;</p>
-<p>That was my wake-up call.</p>
-<h2>What I Changed: The Three-Layer Review Framework</h2>
-<p>I stopped preparing like I was going to write code. I started preparing like I was going to be the last line of defense before production.</p>
-<p>Here&#39;s the mental model I now use for every piece of code I see in an interview:</p>
+<p>That was Flora&#39;s wake-up call.</p>
+<h2>What Flora Changed: The Three-Layer Review Framework</h2>
+<p>Flora stopped preparing like she was going to write code. She started preparing like she was going to be the last line of defense before production.</p>
+<p>Here&#39;s the mental model she developed for every piece of code she saw in interviews:</p>
 <p><img src="../images/system_auditor2.png" alt="Constraints vs Code Quality"></p>
 <h3>Layer 1: The &quot;Will This Break?&quot; Scan</h3>
-<p>Before I say anything clever, I ask: <strong>At what scale does this stop working?</strong></p>
-<p>This isn&#39;t about complexity analysis. This is about production reality. I learned to spot the patterns:</p>
+<p>Before saying anything clever, Flora learned to ask: <strong>At what scale does this stop working?</strong></p>
+<p>This isn&#39;t about complexity analysis. This is about production reality. She trained herself to spot the patterns:</p>
 <ul>
 <li>Unbounded loops over database results (the classic N+1 killer)</li>
 <li>In-memory caches without eviction policies (the memory leak time bomb)</li>
 <li>Synchronous external API calls in the request path (the latency disaster)</li>
 <li>Missing retry logic with exponential backoff (the cascade failure starter kit)</li>
 </ul>
-<p>In my last interview, they showed me a file processing service. The code was beautiful. It also loaded entire CSV files into memory before processing them. I asked: &quot;What&#39;s the largest file we expect?&quot; They said 10MB. I said: &quot;What happens when someone uploads a 2GB file?&quot;</p>
+<p>In her second round of interviews, they showed her a file processing service. The code was beautiful. It also loaded entire CSV files into memory before processing them. Flora asked: &quot;What&#39;s the largest file we expect?&quot; They said 10MB. She followed up: &quot;What happens when someone uploads a 2GB file?&quot;</p>
 <p>They smiled. That was the right question.</p>
 <h3>Layer 2: The &quot;What Am I Not Seeing?&quot; Investigation</h3>
-<p>AI-generated code has a tell: it solves the problem you asked for, and nothing else. It doesn&#39;t know your infrastructure. It doesn&#39;t know your constraints. It doesn&#39;t know that your legacy database can&#39;t handle more than 100 connections.</p>
-<p>I started asking context questions before I even looked at the code:</p>
+<p>Flora noticed that AI-generated code has a tell: it solves the problem you asked for, and nothing else. It doesn&#39;t know your infrastructure. It doesn&#39;t know your constraints. It doesn&#39;t know that your legacy database can&#39;t handle more than 100 connections.</p>
+<p>She started asking context questions before she even looked at the code:</p>
 <ul>
 <li>&quot;What&#39;s the expected request rate?&quot;</li>
 <li>&quot;How is this service deployed? Containers? Serverless?&quot;</li>
@@ -133,51 +133,52 @@
 <li>&quot;Do we have SLAs I should know about?&quot;</li>
 </ul>
 <p><img src="../images/system_auditor.png" alt="System Architecture and Trade-offs"></p>
-<p>Last week, I reviewed code that queried an external API. Clean code. Proper error handling. I asked: &quot;Do we pay per API call?&quot; They said yes. The code was making 50 calls per user request. That would have cost them $30K/month.</p>
+<p>In one interview, Flora reviewed code that queried an external API. Clean code. Proper error handling. She asked: &quot;Do we pay per API call?&quot; They said yes. The code was making 50 calls per user request. That would have cost them $30K/month.</p>
 <p>One question saved them a budget crisis.</p>
 <h3>Layer 3: The &quot;How Would This Actually Ship?&quot; Reality Check</h3>
-<p>This is where I separate myself from the people who just learned to code last year. Production systems aren&#39;t about perfect code. They&#39;re about trade-offs, technical debt, and shipping safely.</p>
-<p>When I review code now, I explicitly talk about:</p>
+<p>This is where Flora separated herself from candidates who&#39;d just learned to code. Production systems aren&#39;t about perfect code. They&#39;re about trade-offs, technical debt, and shipping safely.</p>
+<p>When reviewing code, she explicitly discussed:</p>
 <ul>
-<li><strong>What I&#39;d fix immediately</strong>: The stuff that will cause an outage</li>
-<li><strong>What I&#39;d log as a ticket</strong>: The stuff that&#39;s inefficient but not dangerous</li>
-<li><strong>What I&#39;d leave alone</strong>: The stuff that&#39;s ugly but works</li>
+<li><strong>What to fix immediately</strong>: The stuff that will cause an outage</li>
+<li><strong>What to log as a ticket</strong>: The stuff that&#39;s inefficient but not dangerous</li>
+<li><strong>What to leave alone</strong>: The stuff that&#39;s ugly but works</li>
 </ul>
-<p>In one interview, they gave me code with three problems: terrible variable names, a potential memory leak, and a race condition in the payment processing logic.</p>
-<p>I said: &quot;The race condition is a P0. Users could get double-charged. I&#39;d fix that before we ship. The memory leak is a P1. We can monitor it and address it in the next sprint. The variable names are tech debt. I&#39;d leave them and let the next refactor clean them up.&quot;</p>
-<p>They hired me.</p>
+<p>In her final interview at the company where she&#39;s now working, they gave her code with three problems: terrible variable names, a potential memory leak, and a race condition in the payment processing logic.</p>
+<p>Flora said: &quot;The race condition is a P0. Users could get double-charged. I&#39;d fix that before we ship. The memory leak is a P1. We can monitor it and address it in the next sprint. The variable names are tech debt. I&#39;d leave them and let the next refactor clean them up.&quot;</p>
+<p>They hired her on the spot.</p>
 <h2>The AI Partner Test: Show You&#39;re Driving, Not Just Riding</h2>
-<p>Here&#39;s what surprised me: interviewers don&#39;t care if you use AI during the interview. They care whether you <strong>trust it blindly or verify everything it says</strong>.</p>
+<p>Here&#39;s what surprised Flora: interviewers don&#39;t care if you use AI during the interview. They care whether you <strong>trust it blindly or verify everything it says</strong>.</p>
 <p><img src="../images/system_auditor3.png" alt="Fixing System Issues"></p>
-<p>In my last interview, I was allowed to use ChatGPT. I did. But I narrated my process:</p>
+<p>In one of her later interviews, Flora was explicitly allowed to use ChatGPT. She did. But she narrated her process out loud:</p>
 <p>&quot;I&#39;m going to ask ChatGPT to suggest a caching strategy. [Types prompt] Okay, it&#39;s recommending Redis with a 5-minute TTL. That makes sense for session data, but I want to double-check the eviction policy. [Reads docs] Actually, I&#39;m going to modify this to use LRU eviction instead of the default TTL because our access patterns are uneven.&quot;</p>
-<p>The interviewer stopped me. &quot;This is exactly what we want to see. You&#39;re using the tool, but you&#39;re still thinking.&quot;</p>
+<p>The interviewer stopped her. &quot;This is exactly what we want to see. You&#39;re using the tool, but you&#39;re still thinking.&quot;</p>
 <p>That&#39;s the skill. Treating AI like a junior engineer who gives you a starting point, not an oracle who gives you the answer.</p>
-<h2>What Junior Engineers Get Wrong (And How to Fix It)</h2>
-<p>If you&#39;re early in your career, here&#39;s the trap: you think the interview is about showing you know things. It&#39;s not. It&#39;s about showing you know what you don&#39;t know.</p>
-<p>The best junior engineer I ever interviewed said this: &quot;I don&#39;t recognize this caching library. Can you tell me if it&#39;s thread-safe? Because if not, we&#39;ll have a problem when we scale horizontally.&quot;</p>
+<h2>What Junior Engineers Get Wrong (And How Flora Fixed It)</h2>
+<p>Flora told me the trap for early-career engineers: they think the interview is about showing they know things. It&#39;s not. It&#39;s about showing they know what they don&#39;t know.</p>
+<p>She shared an example from a junior engineer she interviewed recently who said: &quot;I don&#39;t recognize this caching library. Can you tell me if it&#39;s thread-safe? Because if not, we&#39;ll have a problem when we scale horizontally.&quot;</p>
 <p>They didn&#39;t know the answer. But they knew the question mattered. That&#39;s the skill.</p>
-<p>When you&#39;re preparing:</p>
+<p>Flora&#39;s advice for junior engineers preparing:</p>
 <ul>
 <li>Stop memorizing algorithms. Start reading post-mortems.</li>
 <li>Stop solving toy problems. Start reviewing production code on GitHub.</li>
 <li>Stop trying to write perfect code. Start asking what &quot;perfect&quot; means in context.</li>
 </ul>
 <p>The interview isn&#39;t testing if you can code. It&#39;s testing if you can <strong>think like someone who has to maintain the code you wrote at 2 AM six months from now</strong>.</p>
-<h2>My Current Interview Prep Routine</h2>
-<p>I don&#39;t practice coding anymore. I practice reviewing.</p>
-<p>Once a week, I:</p>
+<h2>Flora&#39;s Interview Prep Routine</h2>
+<p>After her initial failures, Flora completely changed her approach. She doesn&#39;t practice coding anymore. She practices reviewing.</p>
+<p>Her weekly routine:</p>
 <ol>
 <li>Pick a popular open-source repo</li>
 <li>Find a recent merged PR</li>
-<li>Review it like I&#39;m the gatekeeper: What would break? What&#39;s the cost? What&#39;s the trade-off?</li>
-<li>Read the actual PR comments to see what the maintainers caught that I missed</li>
+<li>Review it like she&#39;s the gatekeeper: What would break? What&#39;s the cost? What&#39;s the trade-off?</li>
+<li>Read the actual PR comments to see what the maintainers caught that she missed</li>
 </ol>
-<p>This has made me better at interviews and better at my actual job.</p>
+<p>She told me this preparation made her better at interviews and better at her actual job.</p>
 <h2>The Bottom Line</h2>
-<p>The game changed. Interviewers aren&#39;t hiring code generators anymore. They&#39;re hiring people who can look at auto-generated code and say: &quot;This will cost us $50K/month in Lambda invocations&quot; or &quot;This will fall over when we hit 10K users&quot; or &quot;This is fine for now, but we should refactor it in Q3.&quot;</p>
+<p>Watching Flora&#39;s journey made one thing clear: the game has changed. Interviewers aren&#39;t hiring code generators anymore. They&#39;re hiring people who can look at auto-generated code and say: &quot;This will cost us $50K/month in Lambda invocations&quot; or &quot;This will fall over when we hit 10K users&quot; or &quot;This is fine for now, but we should refactor it in Q3.&quot;</p>
 <p>If you can do that, you&#39;re valuable. If you can&#39;t, you&#39;re competing with ChatGPT.</p>
 <p>And ChatGPT works for free.</p>
+<p>Flora&#39;s now thriving in her new role, and I&#39;ve adopted many of her preparation strategies for my own work. The skill that got her hired wasn&#39;t coding—it was judgment. That&#39;s what companies are paying for now.</p>
 <hr>
 <h2>References</h2>
 <p>This article was inspired by:</p>
