@@ -47,7 +47,7 @@ function getPostTemplate(post, content) {
   <title>${post.title} | Tolu Olukoga</title>
   <meta name="description" content="${post.summary}"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../old-site/style.css"/>
+  <link rel="stylesheet" href="../style.css"/>
   <style>
     pre {
       background-color: #1e293b;
@@ -104,14 +104,14 @@ function getPostTemplate(post, content) {
 <body>
   <nav>
     <div class="container">
-      <a href="../old-site/index.html" class="nav-logo">Tolu Olukoga</a>
+      <a href="../index.html" class="nav-logo">Tolu Olukoga</a>
       <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
       <ul class="nav-menu">
-        <li><a href="../old-site/index.html">Home</a></li>
-        <li><a href="../old-site/projects.html">Projects</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html">Projects</a></li>
         <li><a href="../blog.html" class="active">Blog</a></li>
-        <li><a href="../old-site/about.html">About</a></li>
-        <li><a href="../old-site/contact.html">Contact</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -141,13 +141,13 @@ function getPostTemplate(post, content) {
       <div class="card" style="max-width: 800px; margin: 0 auto; background-color: var(--border);">
         <h3 style="margin-top: 0;">About the Author</h3>
         <p>Tolu Olukoga is a Senior AI Systems Engineer specializing in agentic AI architecture, multi-agent orchestration, and production MLOps. He builds production-scale AI systems in regulated environments.</p>
-        <p><a href="../old-site/about.html" class="btn btn-link">Learn more about Tolu →</a></p>
+        <p><a href="../about.html" class="btn btn-link">Learn more about Tolu →</a></p>
       </div>
     </section>
 
     <section style="margin-top: 2rem; text-align: center;">
       <a href="../blog.html" class="btn btn-secondary">← Back to All Posts</a>
-      <a href="../old-site/contact.html" class="btn btn-primary" style="margin-left: 1rem;">Get In Touch</a>
+      <a href="../contact.html" class="btn btn-primary" style="margin-left: 1rem;">Get In Touch</a>
     </section>
   </main>
 
@@ -155,7 +155,7 @@ function getPostTemplate(post, content) {
     <p>© 2026 Tolu Olukoga. All rights reserved.</p>
   </footer>
 
-  <script src="../old-site/script.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>`;
 }
@@ -185,19 +185,19 @@ function generateBlogIndex(posts) {
   <title>Blog | Tolu Olukoga</title>
   <meta name="description" content="Technical blog posts on AI/ML engineering, agentic systems, and production ML infrastructure."/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="old-site/style.css"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <nav>
     <div class="container">
-      <a href="old-site/index.html" class="nav-logo">Tolu Olukoga</a>
+      <a href="index.html" class="nav-logo">Tolu Olukoga</a>
       <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
       <ul class="nav-menu">
-        <li><a href="old-site/index.html">Home</a></li>
-        <li><a href="old-site/projects.html">Projects</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
         <li><a href="blog.html" class="active">Blog</a></li>
-        <li><a href="old-site/about.html">About</a></li>
-        <li><a href="old-site/contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -221,7 +221,7 @@ ${postCards}
     <p>© 2026 Tolu Olukoga. All rights reserved.</p>
   </footer>
 
-  <script src="old-site/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>`;
 }
