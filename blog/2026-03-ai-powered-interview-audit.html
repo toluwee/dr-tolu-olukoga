@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Audit is Here: How Junior and Senior Engineers Can Master the AI-Powered Interview | Tolu Olukoga</title>
+  <meta name="description" content="The future of engineering interviews has shifted from syntax tests to audit skills. Learn how to demonstrate judgment, verification depth, and architectural reasoning when interviewers hand you AI-generated code and ask 'Why will this fail?'"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    pre {
+      background-color: #1e293b;
+      color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    code {
+      background-color: #1e293b;
+      color: #e2e8f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    th {
+      background-color: #f1f5f9;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    blockquote {
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      color: var(--text-light);
+      font-style: italic;
+    }
+    article img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="nav-logo">Tolu Olukoga</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../blog.html" class="active">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header style="padding: 2rem 0;">
+    <div class="container" style="text-align: left;">
+      <p style="margin: 0; color: #cbd5e1;"><a href="../blog.html" style="color: #cbd5e1;">← Back to Blog</a></p>
+      <h1 style="margin: 1rem 0;">The Audit is Here: How Junior and Senior Engineers Can Master the AI-Powered Interview</h1>
+      <div style="color: #cbd5e1; font-size: 0.95rem;">
+        <span>March 1, 2026</span> •
+        <span>7 min read</span>
+      </div>
+      <div style="margin-top: 1rem;">
+        <span class="tag" style="background-color: #3b82f6; color: white;">Career Development</span>
+        <span class="tag" style="background-color: #3b82f6; color: white;">AI Tools</span>
+        <span class="tag" style="background-color: #3b82f6; color: white;">Interviews</span>
+        <span class="tag" style="background-color: #3b82f6; color: white;">Software Engineering</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <article>
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <p><img src="../images/system_auditor1.png" alt="Interview Audit Concept"></p>
+<p>I&#39;ve spent the last few years deep in the trenches of system design and machine learning infrastructure. Like many of you, I&#39;ve watched the rise of AI code generators with a mix of awe and professional recalibration. We can no longer pretend it&#39;s a distant future. The future of engineering interviews is already here, and the old playbook is worthless.</p>
+<p>I recently read an article that perfectly articulated the shift from the <em>employer&#39;s</em> perspective: syntax tests are dead, and the &quot;audit interview&quot; is here to stay. They&#39;re no longer hiring for typists; they&#39;re hiring for auditors.</p>
+<p>This is a fundamental shift. As engineers, we can&#39;t just show up and write a function anymore. We have to demonstrate judgment. So, how do we, the candidates, prepare for a world where the interviewer hands us a block of AI-generated code and asks, &quot;Why will this fail?&quot;</p>
+<p>I&#39;ve synthesized the core lessons into a preparation guide for engineers at all levels. Whether you&#39;re a junior trying to get your foot in the door or a senior looking to command a room, here&#39;s how you flip the script and ace the audit.</p>
+<h2>Forget the Syntax, Focus on the System</h2>
+<p>The first and most important mental shift is this: <strong>your value is no longer in the code you write, but in the problems you prevent.</strong> The interviewer doesn&#39;t need to see you burn a variable to memory. They need to see you hold the entire system in your head.</p>
+<p><img src="../images/system_auditor2.png" alt="Constraints vs Code Quality"></p>
+<p>Here are the four key dimensions you need to prepare for, which map directly to what hiring managers are now desperately seeking.</p>
+<h3>1. Verification Depth: Becoming a Professional Skeptic</h3>
+<p>In the past, you tried to write perfect code. Now, you&#39;re being judged on your ability to find the imperfections in <em>almost</em>-perfect code.</p>
+<p><strong>How to Prepare:</strong> When practicing, don&#39;t just stop when your code runs. Adopt a mindset of &quot;what breaks this?&quot; For every function you write or review, ask yourself: What happens when the database latency spikes to 500ms? What happens when we have 10x the data? What happens when two users do this at the exact same time?</p>
+<p><strong>The Interview Signal:</strong> In the interview, don&#39;t just say &quot;this looks good.&quot; Point out the hidden N+1 query. Question the in-memory cache that will blow up with 10,000 users. Your goal is to show that &quot;correct&quot; is not the same as &quot;robust.&quot;</p>
+<h3>2. Architectural Reasoning: Zooming Out</h3>
+<p>AI is a brilliant local-maximum solver. It can write a perfect function for a given input. It is terrible at understanding the global system. Your job is to be the global thinker.</p>
+<p><strong>How to Prepare:</strong> When you study a piece of code, force yourself to trace the data flow. Where does the input come from? Is it sanitized? What service is it calling? What is the downstream impact of a failure here? Will your retry logic accidentally DDoS another service?</p>
+<p><strong>The Interview Signal:</strong> When given a piece of code, your first questions shouldn&#39;t be about the loop. They should be about the context. &quot;What does the upstream service guarantee about this payload?&quot; or &quot;What&#39;s the contract with the downstream API?&quot; You are demonstrating that you see the code as a living part of an ecosystem, not a standalone artifact.</p>
+<h3>3. Economic Awareness: Thinking Like an Owner</h3>
+<p>This is the secret weapon of the senior engineer. Every line of code now has a line-item cost. Compute, storage, API calls—it all adds up.</p>
+<p><img src="../images/system_auditor.png" alt="System Architecture and Trade-offs"></p>
+<p><strong>How to Prepare:</strong> Start thinking in terms of trade-offs. Is a vector database cool? Yes. Do we need it for 10,000 static items we could store in Postgres for a fraction of the cost? Probably not. Practice articulating these trade-offs. &quot;Option A is faster to market but has a higher operational cost. Option B is cheaper but requires more initial dev work.&quot;</p>
+<p><strong>The Interview Signal:</strong> In an interview, when proposing a solution, explicitly mention the economics. &quot;We could spin up a new microservice, but given the simplicity, extending the existing monolith would be more cost-effective and faster.&quot; This shows you treat the company&#39;s resources like your own.</p>
+<h3>4. AI Interrogation Skill: Managing Your Intern</h3>
+<p>The interviewers <em>expect</em> you to use AI. They are not testing if you can avoid it; they are testing <em>how</em> you use it. Treat it like a brilliant, but incredibly naive, intern.</p>
+<p><strong>How to Prepare:</strong> Practice prompt engineering with constraints. Don&#39;t just ask for a function. Ask for it again, but this time with a memory limit. Ask it to explain its logic so you can verify it. Ask it to identify the potential edge cases <em>it</em> might have missed.</p>
+<p><strong>The Interview Signal:</strong> When using the AI, narrate your thought process. &quot;Okay, that&#39;s a good starting point, but I&#39;m going to ask it to refactor this part to be async.&quot; or &quot;I need to double-check its logic on this cache invalidation strategy; it looks suspicious.&quot; You are showing the interviewer that you are the one in charge, not the tool.</p>
+<h2>Your Playbook for the 3-Phase Audit Interview</h2>
+<p>The article laid out a brutal but effective three-phase interview. Here&#39;s how you tackle it as a candidate.</p>
+<p><img src="../images/system_auditor3.png" alt="Fixing System Issues"></p>
+<h3>Phase 1: Orientation (Don&#39;t Touch the Keyboard!)</h3>
+<p>The interviewer shows you a dashboard with rising costs or a traffic spike. Your instinct might be to jump in and fix it.</p>
+<p><strong>Resist that instinct.</strong></p>
+<p><strong>Your Goal:</strong> You must orient yourself. Restate the problem. &quot;So, if I understand correctly, our primary constraint right now is rising egress costs, and we need to find the root cause, correct?&quot; This one sentence demonstrates more judgment than an hour of coding. It shows you can prioritize.</p>
+<h3>Phase 2: The Audit (Read, Reason, and Simulate)</h3>
+<p>You&#39;re given a block of AI-generated Python code that &quot;works.&quot; Your job is to be the human firewall.</p>
+<p><strong>Your Goal:</strong> Slow down. Talk through the code line by line in your head, but out loud. Simulate the execution. &quot;Okay, this function pulls all the users and then loops through them to make an API call for each one. This is a classic N+1 problem. If we have 10,000 users, we&#39;re making 10,000 API calls, which explains the latency and potential cost spike.&quot; You are being paid for the hesitation and the scrutiny.</p>
+<h3>Phase 3: The Defense (Prioritize Relentlessly)</h3>
+<p>They ask you to fix one thing. Just one.</p>
+<p><strong>Your Goal:</strong> Show triage skills. Do not try to fix the bad variable names <em>and</em> the memory leak <em>and</em> the N+1 query. Pick the one thing that will bring the system down first. &quot;The most critical failure is the N+1 query. It will take down the service in production. I&#39;m going to fix that by implementing a batch fetch. I would log the other issues—the unoptimized data structure and the potential memory leak—as tickets to address in the next sprint.&quot; This demonstrates you understand technical debt and how to ship safely.</p>
+<h2>A Note to My Junior Engineer Friends</h2>
+<p>Don&#39;t read this and feel intimidated. Read this and feel empowered. You don&#39;t need 10 years of experience to be skeptical and detail-oriented.</p>
+<p>In the past, you had to fight for the chance to have a senior review your code. In this new era, your &quot;apprenticeship&quot; is reviewing the AI&#39;s code. Your first job is to be the skeptic. Ask the questions. Wonder about the edge cases. You will learn faster by analyzing high-volume code patterns than you ever did by wrestling with a linter. Your attention to detail is now your most valuable asset.</p>
+<p>The future of software development isn&#39;t about who can code the fastest. It&#39;s about who can reason the deepest. The audit is here. Let&#39;s go prove we&#39;re up to the task.</p>
+
+      </div>
+    </article>
+
+    <section style="margin-top: 3rem;">
+      <div class="card" style="max-width: 800px; margin: 0 auto; background-color: var(--border);">
+        <h3 style="margin-top: 0;">About the Author</h3>
+        <p>Tolu Olukoga is a Senior AI Systems Engineer specializing in agentic AI architecture, multi-agent orchestration, and production MLOps. She builds production-scale AI systems in regulated environments.</p>
+        <p><a href="../about.html" class="btn btn-link">Learn more about Tolu →</a></p>
+      </div>
+    </section>
+
+    <section style="margin-top: 2rem; text-align: center;">
+      <a href="../blog.html" class="btn btn-secondary">← Back to All Posts</a>
+      <a href="../contact.html" class="btn btn-primary" style="margin-left: 1rem;">Get In Touch</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Tolu Olukoga. All rights reserved.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
