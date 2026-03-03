@@ -140,7 +140,7 @@ function getPostTemplate(post, content) {
     <section style="margin-top: 3rem;">
       <div class="card" style="max-width: 800px; margin: 0 auto; background-color: var(--border);">
         <h3 style="margin-top: 0;">About the Author</h3>
-        <p>Tolu Olukoga is a Senior AI Systems Engineer specializing in agentic AI architecture, multi-agent orchestration, and production MLOps. He builds production-scale AI systems in regulated environments.</p>
+        <p>Tolu Olukoga is a Senior AI Systems Engineer specializing in agentic AI architecture, multi-agent orchestration, and production MLOps. She builds production-scale AI systems in regulated environments.</p>
         <p><a href="../about.html" class="btn btn-link">Learn more about Tolu →</a></p>
       </div>
     </section>
