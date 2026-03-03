@@ -95,7 +95,7 @@
   <main class="container">
     <article>
       <div class="card" style="max-width: 800px; margin: 0 auto;">
-        <p><img src="../images/system_auditor1.png" alt="Interview Audit Concept"><br><em>Engineer examining AI-generated code with a magnifying glass in the interview audit factory. Illustration by nano banana 2.</em></p>
+        <p><img src="../images/system_auditor1.png" alt="Interview Audit Concept"><br><small><em>Engineer examining AI-generated code with a magnifying glass in the interview audit factory. Illustration by nano banana 2.</em></small></p>
 <p>Last month, my colleague Flora interviewed at three different companies. Each one gave her the same task: review code that ChatGPT had generated and tell them what was wrong with it.</p>
 <p>Not &quot;write me a function.&quot; Not &quot;explain this algorithm.&quot; Not even &quot;design this system from scratch.&quot;</p>
 <p>Just: &quot;Here&#39;s code that passes our unit tests. Would you ship it to production? Why or why not?&quot;</p>
@@ -111,7 +111,7 @@
 <h2>What Flora Changed: The Three-Layer Review Framework</h2>
 <p>Flora stopped preparing like she was going to write code. She started preparing like she was going to be the last line of defense before production.</p>
 <p>Here&#39;s the mental model she developed for every piece of code she saw in interviews:</p>
-<p><img src="../images/system_auditor2.png" alt="Constraints vs Code Quality"><br><em>Engineer wielding constraints and best practices against a malfunctioning AI code bot. Illustration by nano banana 2.</em></p>
+<p><img src="../images/system_auditor2.png" alt="Constraints vs Code Quality"><br><small><em>Engineer wielding constraints and best practices against a malfunctioning AI code bot. Illustration by nano banana 2.</em></small></p>
 <h3>Layer 1: The &quot;Will This Break?&quot; Scan</h3>
 <p>Before saying anything clever, Flora learned to ask: <strong>At what scale does this stop working?</strong></p>
 <p>This isn&#39;t about complexity analysis. This is about production reality. She trained herself to spot the patterns:</p>
@@ -132,7 +132,7 @@
 <li>&quot;What&#39;s the downstream dependency? Can it handle our peak load?&quot;</li>
 <li>&quot;Do we have SLAs I should know about?&quot;</li>
 </ul>
-<p><img src="../images/system_auditor.png" alt="System Architecture and Trade-offs"><br><em>Engineer analyzing system architecture diagrams and weighing technical trade-offs with cost considerations. Illustration by nano banana 2.</em></p>
+<p><img src="../images/system_auditor.png" alt="System Architecture and Trade-offs"><br><small><em>Engineer analyzing system architecture diagrams and weighing technical trade-offs with cost considerations. Illustration by nano banana 2.</em></small></p>
 <p>In one interview, Flora reviewed code that queried an external API. Clean code. Proper error handling. She asked: &quot;Do we pay per API call?&quot; They said yes. The code was making 50 calls per user request. That would have cost them $30K/month.</p>
 <p>One question saved them a budget crisis.</p>
 <h3>Layer 3: The &quot;How Would This Actually Ship?&quot; Reality Check</h3>
@@ -148,7 +148,7 @@
 <p>They hired her on the spot.</p>
 <h2>The AI Partner Test: Show You&#39;re Driving, Not Just Riding</h2>
 <p>Here&#39;s what surprised Flora: interviewers don&#39;t care if you use AI during the interview. They care whether you <strong>trust it blindly or verify everything it says</strong>.</p>
-<p><img src="../images/system_auditor3.png" alt="Fixing System Issues"><br><em>Engineer patching critical system issues including N+1 queries, memory leaks, and batch fetch problems. Illustration by nano banana 2.</em></p>
+<p><img src="../images/system_auditor3.png" alt="Fixing System Issues"><br><small><em>Engineer patching critical system issues including N+1 queries, memory leaks, and batch fetch problems. Illustration by nano banana 2.</em></small></p>
 <p>In one of her later interviews, Flora was explicitly allowed to use ChatGPT. She did. But she narrated her process out loud:</p>
 <p>&quot;I&#39;m going to ask ChatGPT to suggest a caching strategy. [Types prompt] Okay, it&#39;s recommending Redis with a 5-minute TTL. That makes sense for session data, but I want to double-check the eviction policy. [Reads docs] Actually, I&#39;m going to modify this to use LRU eviction instead of the default TTL because our access patterns are uneven.&quot;</p>
 <p>The interviewer stopped her. &quot;This is exactly what we want to see. You&#39;re using the tool, but you&#39;re still thinking.&quot;</p>
