@@ -6,7 +6,7 @@
   <title>Building an Intelligent Travel Concierge: How RAG and Fine-Tuned LLMs Transform Trip Planning | Tolu Olukoga</title>
   <meta name="description" content="Building a travel concierge system using RAG, fine-tuned LLMs with LoRA, and microservices that generates personalized itineraries with 91.8% feasibility and 2.4s response time."/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../style.css"/>
+  <link rel="stylesheet" href="../old-site/style.css"/>
   <style>
     pre {
       background-color: #1e293b;
@@ -52,19 +52,25 @@
       color: var(--text-light);
       font-style: italic;
     }
+    article img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
   </style>
 </head>
 <body>
   <nav>
     <div class="container">
-      <a href="../index.html" class="nav-logo">Tolu Olukoga</a>
+      <a href="../old-site/index.html" class="nav-logo">Tolu Olukoga</a>
       <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
       <ul class="nav-menu">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../old-site/index.html">Home</a></li>
+        <li><a href="../old-site/projects.html">Projects</a></li>
         <li><a href="../blog.html" class="active">Blog</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../old-site/about.html">About</a></li>
+        <li><a href="../old-site/contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -74,8 +80,8 @@
       <p style="margin: 0; color: #cbd5e1;"><a href="../blog.html" style="color: #cbd5e1;">← Back to Blog</a></p>
       <h1 style="margin: 1rem 0;">Building an Intelligent Travel Concierge: How RAG and Fine-Tuned LLMs Transform Trip Planning</h1>
       <div style="color: #cbd5e1; font-size: 0.95rem;">
-        <span>February 28, 2026</span> •
-        <span>15 min read</span>
+        <span>February 27, 2026</span> •
+        <span>7 min read</span>
       </div>
       <div style="margin-top: 1rem;">
         <span class="tag" style="background-color: #3b82f6; color: white;">RAG</span>
@@ -90,256 +96,198 @@
     <article>
       <div class="card" style="max-width: 800px; margin: 0 auto;">
         <p>Planning a multi-day trip is exhausting. Between comparing flight times, finding the right hotels, researching activities, and ensuring everything fits within budget, what should be exciting becomes overwhelming. What if an AI could handle all of this in seconds, understanding your preferences in natural language and generating a complete, bookable itinerary?</p>
+<p>That&#39;s exactly what we built with the Intelligent Travel Concierge System.</p>
+<h2>The Challenge: From Search to Complete Experiences</h2>
+<p>Traditional online travel booking forces users to piece together their trips across multiple pages and products. You search for flights, then hotels, then activities—each step disconnected from the last. This fragmented experience misses a crucial insight: travelers don&#39;t want products, they want experiences.</p>
+<p>Our goal was ambitious:</p>
+<ul>
+<li><strong>Generate personalized 3-7 day travel itineraries</strong> from natural language queries</li>
+<li><strong>Increase user engagement</strong> by 25%</li>
+<li><strong>Boost multi-product bookings</strong> by 18%</li>
+<li><strong>Maintain sub-3-second response times</strong> for instant gratification</li>
+</ul>
+<h2>The Solution: A Three-Pillar AI Architecture</h2>
+<p>We built a sophisticated system that combines three powerful AI components, orchestrated through a microservices architecture.</p>
+<h3>1. Fine-Tuned Language Model (LoRA GPT)</h3>
+<p>At the heart of our system is a 175B parameter GPT model, fine-tuned using LoRA (Low-Rank Adaptation) on 18 months of historical booking conversations. Rather than fine-tuning all 175 billion parameters—an impossibly expensive task—LoRA allows us to train just 2.5 million additional parameters while achieving comparable performance.</p>
+<p><strong>Why this matters:</strong> The model understands travel intent with 92.1% accuracy. When a user types &quot;romantic weekend in Paris under $2000,&quot; it doesn&#39;t just extract keywords—it understands the context, mood, and implicit requirements (intimate restaurants, scenic walks, couples activities).</p>
+<h3>2. RAG System (Retrieval-Augmented Generation)</h3>
+<p>Language models alone can hallucinate facts or provide outdated information. Our RAG system grounds responses in real, current data by maintaining a Pinecone vector database of 2.5 million document chunks covering:</p>
+<ul>
+<li>Travel guides and destination information</li>
+<li>Hotel and restaurant details</li>
+<li>Local attractions and activities</li>
+<li>Real-time pricing and availability</li>
+</ul>
+<p>Using OpenAI&#39;s text-embedding-3-small model, we perform semantic searches to retrieve the top 10 most relevant documents for each query, achieving 84.2% precision.</p>
+<p><strong>The magic:</strong> When generating an itinerary for Barcelona, the system doesn&#39;t rely on potentially outdated training data. It retrieves current information about Sagrada Familia opening hours, the best paella restaurants in the Gothic Quarter, and beach-accessible hotels in Barceloneta.</p>
+<h3>3. Intelligent Constraint Satisfaction</h3>
+<p>The constraint satisfaction layer ensures generated itineraries are actually bookable. It validates:</p>
+<ul>
+<li><strong>Budget optimization</strong> (±15% tolerance for flexibility)</li>
+<li><strong>Date availability</strong> across flights, hotels, and activities</li>
+<li><strong>Geographic feasibility</strong> (no 8-hour drives between breakfast and lunch)</li>
+<li><strong>Time buffers</strong> (minimum 2-hour spacing between activities)</li>
+</ul>
+<p>This achieves a 91.8% feasibility rate—nearly all generated itineraries can be immediately booked.</p>
+<h2>Microservices Architecture: Built for Scale</h2>
+<p>Rather than a monolithic application, we designed six independent services:</p>
+<ul>
+<li><strong>Concierge Service:</strong> Orchestrates the AI components and coordinates other services</li>
+<li><strong>Flights Service:</strong> Real-time flight availability and pricing</li>
+<li><strong>Hotels Service:</strong> Hotel inventory and rates</li>
+<li><strong>Activities Service:</strong> Local attraction bookings</li>
+<li><strong>Users Service:</strong> Preference management and booking history</li>
+<li><strong>Payments Service:</strong> Secure booking and payment processing</li>
+</ul>
+<p>Each service scales independently, communicates via well-defined APIs, and can be updated without affecting others. This architecture handles traffic spikes during holiday planning seasons while maintaining our sub-3-second response time SLA.</p>
+<h2>Safety First: Multi-Layer Guardrails</h2>
+<p>An AI system making real booking recommendations carries significant responsibility. We implemented NeMo Guardrails at three checkpoints:</p>
+<p><strong>Pre-processing Guardrails:</strong></p>
+<ul>
+<li>Input validation and content filtering</li>
+<li>Budget and date feasibility checks</li>
+<li>Query safety screening</li>
+</ul>
+<p><strong>Generation-time Guardrails:</strong></p>
+<ul>
+<li>Token-level harmful content monitoring</li>
+<li>Factual accuracy cross-referencing</li>
+<li>Business policy compliance validation</li>
+</ul>
+<p><strong>Post-processing Guardrails:</strong></p>
+<ul>
+<li>Final itinerary quality checks</li>
+<li>Real-time inventory verification</li>
+<li>Legal and regulatory compliance</li>
+</ul>
+<p>Result: 99.7% harmful content detection accuracy and &lt;0.1% policy violation rate, with just 2.3% false positives.</p>
+<h2>Real-World Impact: The Numbers Speak</h2>
+<p>After deployment, the results exceeded our targets:</p>
+<ul>
+<li><strong>28.4% increase in user engagement</strong> (beat the 25% target)</li>
+<li><strong>21.7% increase in multi-product bookings</strong> (beat the 18% target)</li>
+<li><strong>15.3% booking conversion rate</strong> (3.2 percentage point improvement)</li>
+<li><strong>4.6/5.0 user satisfaction score</strong></li>
+<li><strong>2.4-second average response time</strong> (well under the 3-second SLA)</li>
+</ul>
+<p>These aren&#39;t just vanity metrics. A 21.7% increase in multi-product bookings directly translates to millions in additional revenue while simultaneously improving the user experience.</p>
+<h2>Personalization at Scale</h2>
+<p>The system learns from every interaction:</p>
+<ul>
+<li><strong>Explicit preferences:</strong> Direct user inputs about travel style, budget, dietary restrictions</li>
+<li><strong>Implicit preferences:</strong> Patterns derived from booking history and click behavior</li>
+<li><strong>Contextual adaptation:</strong> Real-time learning during conversation sessions</li>
+<li><strong>Collaborative filtering:</strong> Matching similar users for better recommendations</li>
+</ul>
+<p>When a frequent business traveler who usually books budget hotels suddenly searches for a luxury resort, the system recognizes the context shift and adapts recommendations accordingly.</p>
+<h2>Continuous Improvement: Living, Learning, Evolving</h2>
+<p>The travel industry changes constantly—new hotels open, airlines adjust routes, attractions close for renovation. Our system stays current through:</p>
+<ul>
+<li><strong>Monthly model retraining</strong> with updated conversation data</li>
+<li><strong>Daily vector database updates</strong> for content freshness</li>
+<li><strong>Weekly guardrails updates</strong> for emerging safety concerns</li>
+<li><strong>Quarterly feature optimization</strong> based on performance analysis</li>
+</ul>
+<p>Automated monitoring tracks response times, error rates, conversion rates, and user satisfaction in real-time, alerting the team to performance degradation before it impacts users.</p>
+<h2>Technical Deep Dive: Why LoRA?</h2>
+<p>Training large language models is prohibitively expensive. Full fine-tuning of a 175B parameter model requires enormous computational resources and risks catastrophic forgetting of general capabilities.</p>
+<p>LoRA introduces trainable rank decomposition matrices into each transformer layer, freezing the original model weights. We train only these small matrices (2.5M parameters vs. 175B), achieving:</p>
+<ul>
+<li><strong>99% reduction in trainable parameters</strong></li>
+<li><strong>Faster training times</strong> (3 epochs with early stopping)</li>
+<li><strong>Lower memory footprint</strong> enabling more efficient serving</li>
+<li><strong>Preservation of general capabilities</strong> while adding domain expertise</li>
+</ul>
+<p>Configuration: rank=16, alpha=32, dropout=0.1, learning rate 5e-5 with AdamW optimizer.</p>
+<h2>Evaluation: Beyond Accuracy Metrics</h2>
+<p>We measure success through multiple lenses:</p>
+<p><strong>Automated Metrics:</strong></p>
+<ul>
+<li>BLEU score for n-gram overlap with reference itineraries</li>
+<li>ROUGE score for content coverage</li>
+<li>RAGAS framework for comprehensive RAG evaluation (context relevance, answer faithfulness, answer precision)</li>
+</ul>
+<p><strong>Human Evaluation:</strong></p>
+<ul>
+<li>Expert travel agents assess itinerary quality</li>
+<li>Content safety and appropriateness reviews</li>
+<li>Business alignment verification</li>
+</ul>
+<p><strong>A/B Testing:</strong></p>
+<ul>
+<li>Statistical significance testing for model improvements</li>
+<li>Conversion rate tracking</li>
+<li>NPS (Net Promoter Score) monitoring</li>
+</ul>
+<p>This multi-faceted approach ensures we optimize for what matters: bookings, satisfaction, and business impact—not just academic benchmarks.</p>
+<h2>Lessons Learned</h2>
+<p><strong>1. Domain adaptation matters more than model size</strong><br>A well-fine-tuned smaller model outperforms a larger generic model for specialized tasks.</p>
+<p><strong>2. RAG is non-negotiable for factual accuracy</strong><br>Hallucinations are unacceptable when dealing with real bookings and customer money.</p>
+<p><strong>3. Guardrails prevent expensive mistakes</strong><br>Better to reject 2.3% of valid queries than let through harmful or inaccurate content.</p>
+<p><strong>4. Microservices enable independent scaling</strong><br>The flights service needs different resources than the activities service.</p>
+<p><strong>5. User trust requires transparency</strong><br>Showing confidence scores and alternative options builds trust even when perfect answers aren&#39;t available.</p>
+<h2>What&#39;s Next?</h2>
+<p>We&#39;re exploring several enhancements:</p>
+<ul>
+<li><strong>Multimodal capabilities</strong> for image-based destination discovery</li>
+<li><strong>Voice interaction</strong> for hands-free trip planning</li>
+<li><strong>Real-time trip modification</strong> during travel</li>
+<li><strong>Group travel coordination</strong> for managing multiple travelers&#39; preferences</li>
+<li><strong>Carbon footprint optimization</strong> for sustainable travel options</li>
+</ul>
+<h2>Try It Yourself</h2>
+<p>The system is open-source and available with full documentation. Getting started is simple:</p>
+<pre><code class="language-bash">docker-compose up --build
+</code></pre>
+<p>The Concierge API will be available at <code>http://localhost:8000</code>. Send a POST request to <code>/api/v1/concierge/generate-itinerary</code> with your dream trip description and watch AI craft your perfect itinerary.</p>
+<h2>Conclusion</h2>
+<p>The Intelligent Travel Concierge System demonstrates that modern AI—when thoughtfully architected with fine-tuned models, RAG, guardrails, and real-time data—can transform complex, multi-step user experiences into simple, natural language interactions.</p>
+<p>By combining the reasoning capabilities of large language models with grounded, factual data retrieval and robust safety mechanisms, we&#39;ve created a system that doesn&#39;t just understand what users want—it delivers exactly what they need, bookable and ready to go.</p>
+<p>The future of travel planning isn&#39;t about searching. It&#39;s about conversing, trusting, and booking with confidence.</p>
+<hr>
+<p><strong>Technical Stack:</strong></p>
+<ul>
+<li>Base Model: GPT (175B parameters)</li>
+<li>Fine-tuning: LoRA (rank=16, alpha=32)</li>
+<li>Vector Database: Pinecone</li>
+<li>Embeddings: OpenAI text-embedding-3-small</li>
+<li>Guardrails: NeMo Guardrails</li>
+<li>Architecture: Microservices with Docker</li>
+<li>Caching: Redis</li>
+<li>Training Data: 18 months, 12.5M conversations</li>
+</ul>
+<p><strong>Performance:</strong></p>
+<ul>
+<li>Response Time: 2.4s average</li>
+<li>Accuracy: 87.3% itinerary generation</li>
+<li>Intent Classification: 92.1%</li>
+<li>User Satisfaction: 4.6/5.0</li>
+<li>Conversion Lift: +3.2 percentage points</li>
+</ul>
+<p>Ready to revolutionize your travel planning experience? The code is waiting for you.</p>
 
-        <p>That's exactly what we built with the Intelligent Travel Concierge System.</p>
-
-        <h2>The Challenge: From Search to Complete Experiences</h2>
-
-        <p>Traditional online travel booking forces users to piece together their trips across multiple pages and products. You search for flights, then hotels, then activities—each step disconnected from the last. This fragmented experience misses a crucial insight: travelers don't want products, they want experiences.</p>
-
-        <p>Our goal was ambitious:</p>
-        <ul>
-          <li><strong>Generate personalized 3-7 day travel itineraries</strong> from natural language queries</li>
-          <li><strong>Increase user engagement</strong> by 25%</li>
-          <li><strong>Boost multi-product bookings</strong> by 18%</li>
-          <li><strong>Maintain sub-3-second response times</strong> for instant gratification</li>
-        </ul>
-
-        <h2>The Solution: A Three-Pillar AI Architecture</h2>
-
-        <p>We built a sophisticated system that combines three powerful AI components, orchestrated through a microservices architecture.</p>
-
-        <h3>1. Fine-Tuned Language Model (LoRA GPT)</h3>
-
-        <p>At the heart of our system is a 175B parameter GPT model, fine-tuned using LoRA (Low-Rank Adaptation) on 18 months of historical booking conversations. Rather than fine-tuning all 175 billion parameters—an impossibly expensive task—LoRA allows us to train just 2.5 million additional parameters while achieving comparable performance.</p>
-
-        <p><strong>Why this matters:</strong> The model understands travel intent with 92.1% accuracy. When a user types "romantic weekend in Paris under $2000," it doesn't just extract keywords—it understands the context, mood, and implicit requirements (intimate restaurants, scenic walks, couples activities).</p>
-
-        <h3>2. RAG System (Retrieval-Augmented Generation)</h3>
-
-        <p>Language models alone can hallucinate facts or provide outdated information. Our RAG system grounds responses in real, current data by maintaining a Pinecone vector database of 2.5 million document chunks covering:</p>
-        <ul>
-          <li>Travel guides and destination information</li>
-          <li>Hotel and restaurant details</li>
-          <li>Local attractions and activities</li>
-          <li>Real-time pricing and availability</li>
-        </ul>
-
-        <p>Using OpenAI's text-embedding-3-small model, we perform semantic searches to retrieve the top 10 most relevant documents for each query, achieving 84.2% precision.</p>
-
-        <p><strong>The magic:</strong> When generating an itinerary for Barcelona, the system doesn't rely on potentially outdated training data. It retrieves current information about Sagrada Familia opening hours, the best paella restaurants in the Gothic Quarter, and beach-accessible hotels in Barceloneta.</p>
-
-        <h3>3. Intelligent Constraint Satisfaction</h3>
-
-        <p>The constraint satisfaction layer ensures generated itineraries are actually bookable. It validates:</p>
-        <ul>
-          <li><strong>Budget optimization</strong> (±15% tolerance for flexibility)</li>
-          <li><strong>Date availability</strong> across flights, hotels, and activities</li>
-          <li><strong>Geographic feasibility</strong> (no 8-hour drives between breakfast and lunch)</li>
-          <li><strong>Time buffers</strong> (minimum 2-hour spacing between activities)</li>
-        </ul>
-
-        <p>This achieves a 91.8% feasibility rate—nearly all generated itineraries can be immediately booked.</p>
-
-        <h2>Microservices Architecture: Built for Scale</h2>
-
-        <p>Rather than a monolithic application, we designed six independent services:</p>
-
-        <ul>
-          <li><strong>Concierge Service:</strong> Orchestrates the AI components and coordinates other services</li>
-          <li><strong>Flights Service:</strong> Real-time flight availability and pricing</li>
-          <li><strong>Hotels Service:</strong> Hotel inventory and rates</li>
-          <li><strong>Activities Service:</strong> Local attraction bookings</li>
-          <li><strong>Users Service:</strong> Preference management and booking history</li>
-          <li><strong>Payments Service:</strong> Secure booking and payment processing</li>
-        </ul>
-
-        <p>Each service scales independently, communicates via well-defined APIs, and can be updated without affecting others. This architecture handles traffic spikes during holiday planning seasons while maintaining our sub-3-second response time SLA.</p>
-
-        <h2>Safety First: Multi-Layer Guardrails</h2>
-
-        <p>An AI system making real booking recommendations carries significant responsibility. We implemented NeMo Guardrails at three checkpoints:</p>
-
-        <p><strong>Pre-processing Guardrails:</strong></p>
-        <ul>
-          <li>Input validation and content filtering</li>
-          <li>Budget and date feasibility checks</li>
-          <li>Query safety screening</li>
-        </ul>
-
-        <p><strong>Generation-time Guardrails:</strong></p>
-        <ul>
-          <li>Token-level harmful content monitoring</li>
-          <li>Factual accuracy cross-referencing</li>
-          <li>Business policy compliance validation</li>
-        </ul>
-
-        <p><strong>Post-processing Guardrails:</strong></p>
-        <ul>
-          <li>Final itinerary quality checks</li>
-          <li>Real-time inventory verification</li>
-          <li>Legal and regulatory compliance</li>
-        </ul>
-
-        <p>Result: 99.7% harmful content detection accuracy and &lt;0.1% policy violation rate, with just 2.3% false positives.</p>
-
-        <h2>Real-World Impact: The Numbers Speak</h2>
-
-        <p>After deployment, the results exceeded our targets:</p>
-
-        <ul>
-          <li><strong>28.4% increase in user engagement</strong> (beat the 25% target)</li>
-          <li><strong>21.7% increase in multi-product bookings</strong> (beat the 18% target)</li>
-          <li><strong>15.3% booking conversion rate</strong> (3.2 percentage point improvement)</li>
-          <li><strong>4.6/5.0 user satisfaction score</strong></li>
-          <li><strong>2.4-second average response time</strong> (well under the 3-second SLA)</li>
-        </ul>
-
-        <p>These aren't just vanity metrics. A 21.7% increase in multi-product bookings directly translates to millions in additional revenue while simultaneously improving the user experience.</p>
-
-        <h2>Personalization at Scale</h2>
-
-        <p>The system learns from every interaction:</p>
-
-        <ul>
-          <li><strong>Explicit preferences:</strong> Direct user inputs about travel style, budget, dietary restrictions</li>
-          <li><strong>Implicit preferences:</strong> Patterns derived from booking history and click behavior</li>
-          <li><strong>Contextual adaptation:</strong> Real-time learning during conversation sessions</li>
-          <li><strong>Collaborative filtering:</strong> Matching similar users for better recommendations</li>
-        </ul>
-
-        <p>When a frequent business traveler who usually books budget hotels suddenly searches for a luxury resort, the system recognizes the context shift and adapts recommendations accordingly.</p>
-
-        <h2>Continuous Improvement: Living, Learning, Evolving</h2>
-
-        <p>The travel industry changes constantly—new hotels open, airlines adjust routes, attractions close for renovation. Our system stays current through:</p>
-
-        <ul>
-          <li><strong>Monthly model retraining</strong> with updated conversation data</li>
-          <li><strong>Daily vector database updates</strong> for content freshness</li>
-          <li><strong>Weekly guardrails updates</strong> for emerging safety concerns</li>
-          <li><strong>Quarterly feature optimization</strong> based on performance analysis</li>
-        </ul>
-
-        <p>Automated monitoring tracks response times, error rates, conversion rates, and user satisfaction in real-time, alerting the team to performance degradation before it impacts users.</p>
-
-        <h2>Technical Deep Dive: Why LoRA?</h2>
-
-        <p>Training large language models is prohibitively expensive. Full fine-tuning of a 175B parameter model requires enormous computational resources and risks catastrophic forgetting of general capabilities.</p>
-
-        <p>LoRA introduces trainable rank decomposition matrices into each transformer layer, freezing the original model weights. We train only these small matrices (2.5M parameters vs. 175B), achieving:</p>
-        <ul>
-          <li><strong>99% reduction in trainable parameters</strong></li>
-          <li><strong>Faster training times</strong> (3 epochs with early stopping)</li>
-          <li><strong>Lower memory footprint</strong> enabling more efficient serving</li>
-          <li><strong>Preservation of general capabilities</strong> while adding domain expertise</li>
-        </ul>
-
-        <p>Configuration: rank=16, alpha=32, dropout=0.1, learning rate 5e-5 with AdamW optimizer.</p>
-
-        <h2>Evaluation: Beyond Accuracy Metrics</h2>
-
-        <p>We measure success through multiple lenses:</p>
-
-        <p><strong>Automated Metrics:</strong></p>
-        <ul>
-          <li>BLEU score for n-gram overlap with reference itineraries</li>
-          <li>ROUGE score for content coverage</li>
-          <li>RAGAS framework for comprehensive RAG evaluation (context relevance, answer faithfulness, answer precision)</li>
-        </ul>
-
-        <p><strong>Human Evaluation:</strong></p>
-        <ul>
-          <li>Expert travel agents assess itinerary quality</li>
-          <li>Content safety and appropriateness reviews</li>
-          <li>Business alignment verification</li>
-        </ul>
-
-        <p><strong>A/B Testing:</strong></p>
-        <ul>
-          <li>Statistical significance testing for model improvements</li>
-          <li>Conversion rate tracking</li>
-          <li>NPS (Net Promoter Score) monitoring</li>
-        </ul>
-
-        <p>This multi-faceted approach ensures we optimize for what matters: bookings, satisfaction, and business impact—not just academic benchmarks.</p>
-
-        <h2>Lessons Learned</h2>
-
-        <p><strong>1. Domain adaptation matters more than model size</strong><br>
-        A well-fine-tuned smaller model outperforms a larger generic model for specialized tasks.</p>
-
-        <p><strong>2. RAG is non-negotiable for factual accuracy</strong><br>
-        Hallucinations are unacceptable when dealing with real bookings and customer money.</p>
-
-        <p><strong>3. Guardrails prevent expensive mistakes</strong><br>
-        Better to reject 2.3% of valid queries than let through harmful or inaccurate content.</p>
-
-        <p><strong>4. Microservices enable independent scaling</strong><br>
-        The flights service needs different resources than the activities service.</p>
-
-        <p><strong>5. User trust requires transparency</strong><br>
-        Showing confidence scores and alternative options builds trust even when perfect answers aren't available.</p>
-
-        <h2>What's Next?</h2>
-
-        <p>We're exploring several enhancements:</p>
-        <ul>
-          <li><strong>Multimodal capabilities</strong> for image-based destination discovery</li>
-          <li><strong>Voice interaction</strong> for hands-free trip planning</li>
-          <li><strong>Real-time trip modification</strong> during travel</li>
-          <li><strong>Group travel coordination</strong> for managing multiple travelers' preferences</li>
-          <li><strong>Carbon footprint optimization</strong> for sustainable travel options</li>
-        </ul>
-
-        <h2>Try It Yourself</h2>
-
-        <p>The system is open-source and available with full documentation. Getting started is simple:</p>
-
-        <pre><code>docker-compose up --build</code></pre>
-
-        <p>The Concierge API will be available at <code>http://localhost:8000</code>. Send a POST request to <code>/api/v1/concierge/generate-itinerary</code> with your dream trip description and watch AI craft your perfect itinerary.</p>
-
-        <h2>Conclusion</h2>
-
-        <p>The Intelligent Travel Concierge System demonstrates that modern AI—when thoughtfully architected with fine-tuned models, RAG, guardrails, and real-time data—can transform complex, multi-step user experiences into simple, natural language interactions.</p>
-
-        <p>By combining the reasoning capabilities of large language models with grounded, factual data retrieval and robust safety mechanisms, we've created a system that doesn't just understand what users want—it delivers exactly what they need, bookable and ready to go.</p>
-
-        <p>The future of travel planning isn't about searching. It's about conversing, trusting, and booking with confidence.</p>
-
-        <hr style="margin: 2rem 0;">
-
-        <p><strong>Technical Stack:</strong></p>
-        <ul>
-          <li>Base Model: GPT (175B parameters)</li>
-          <li>Fine-tuning: LoRA (rank=16, alpha=32)</li>
-          <li>Vector Database: Pinecone</li>
-          <li>Embeddings: OpenAI text-embedding-3-small</li>
-          <li>Guardrails: NeMo Guardrails</li>
-          <li>Architecture: Microservices with Docker</li>
-          <li>Caching: Redis</li>
-          <li>Training Data: 18 months, 12.5M conversations</li>
-        </ul>
-
-        <p><strong>Performance:</strong></p>
-        <ul>
-          <li>Response Time: 2.4s average</li>
-          <li>Accuracy: 87.3% itinerary generation</li>
-          <li>Intent Classification: 92.1%</li>
-          <li>User Satisfaction: 4.6/5.0</li>
-          <li>Conversion Lift: +3.2 percentage points</li>
-        </ul>
-
-        <p>Ready to revolutionize your travel planning experience? The code is waiting for you.</p>
       </div>
     </article>
+
+    <section style="margin-top: 3rem;">
+      <div class="card" style="max-width: 800px; margin: 0 auto; background-color: var(--border);">
+        <h3 style="margin-top: 0;">About the Author</h3>
+        <p>Tolu Olukoga is a Senior AI Systems Engineer specializing in agentic AI architecture, multi-agent orchestration, and production MLOps. He builds production-scale AI systems in regulated environments.</p>
+        <p><a href="../old-site/about.html" class="btn btn-link">Learn more about Tolu →</a></p>
+      </div>
+    </section>
+
+    <section style="margin-top: 2rem; text-align: center;">
+      <a href="../blog.html" class="btn btn-secondary">← Back to All Posts</a>
+      <a href="../old-site/contact.html" class="btn btn-primary" style="margin-left: 1rem;">Get In Touch</a>
+    </section>
   </main>
 
   <footer>
     <p>© 2026 Tolu Olukoga. All rights reserved.</p>
   </footer>
 
-  <script src="../script.js"></script>
+  <script src="../old-site/script.js"></script>
 </body>
 </html>

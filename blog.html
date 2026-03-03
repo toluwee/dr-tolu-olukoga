@@ -4,75 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blog | Tolu Olukoga</title>
-  <meta name="description" content="Technical blog covering MLOps, machine learning engineering, production systems, and data science best practices."/>
+  <meta name="description" content="Technical blog posts on AI/ML engineering, agentic systems, and production ML infrastructure."/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="old-site/style.css"/>
 </head>
 <body>
   <nav>
     <div class="container">
-      <a href="index.html" class="nav-logo">Tolu Olukoga</a>
+      <a href="old-site/index.html" class="nav-logo">Tolu Olukoga</a>
       <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
       <ul class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="old-site/index.html">Home</a></li>
+        <li><a href="old-site/projects.html">Projects</a></li>
         <li><a href="blog.html" class="active">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="old-site/about.html">About</a></li>
+        <li><a href="old-site/contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <header>
-    <div class="container">
-      <h1>Blog</h1>
-      <p class="subtitle">Insights on ML Engineering & Production Systems</p>
+  <header style="padding: 3rem 0;">
+    <div class="container" style="text-align: center;">
+      <h1 style="margin: 0; font-size: 2.5rem; color: white;">Blog</h1>
+      <p class="subtitle" style="color: #cbd5e1;">Technical insights on AI/ML engineering and production systems</p>
     </div>
   </header>
 
   <main class="container">
     <section>
-      <div style="text-align: center; margin-bottom: 2rem;">
-        <button class="btn btn-primary blog-filter-btn active" data-filter="all">All Posts</button>
-        <button class="btn btn-secondary blog-filter-btn" data-filter="mlops">Agentic AI & MLOps</button>
-        <button class="btn btn-secondary blog-filter-btn" data-filter="ml-engineering">ML Engineering</button>
-        <button class="btn btn-secondary blog-filter-btn" data-filter="data-science">Data Science</button>
-        <button class="btn btn-secondary blog-filter-btn" data-filter="tutorials">Tutorials</button>
-      </div>
-
       <div class="grid-2">
-        <div class="card blog-card" data-category="ml-engineering">
-          <div class="card-meta">February 28, 2026 • 15 min read</div>
-          <h3 class="card-title">Building an Intelligent Travel Concierge: How RAG and Fine-Tuned LLMs Transform Trip Planning</h3>
-          <div class="card-tags">
-            <span class="tag success">RAG</span>
-            <span class="tag success">LLMs</span>
-            <span class="tag success">LoRA</span>
-            <span class="tag success">Microservices</span>
-          </div>
-          <p class="card-excerpt">Building a travel concierge system using RAG, fine-tuned LLMs with LoRA, and microservices that generates personalized itineraries with 91.8% feasibility and 2.4s response time. Deep dive into constraint satisfaction, guardrails, and production AI.</p>
-          <a href="blog/2026-02-travel-concierge-rag.html" class="btn btn-link">Read More →</a>
+      <div class="card blog-card">
+        <div class="card-meta">February 27, 2026 • 8 min read</div>
+        <h3 class="card-title">Building an Intelligent Travel Concierge: How RAG and Fine-Tuned LLMs Transform Trip Planning</h3>
+        <div class="card-tags">
+          <span class="tag success">RAG</span>
+          <span class="tag success">LLMs</span>
+          <span class="tag success">LoRA</span>
+          <span class="tag success">Microservices</span>
         </div>
-
-        <div class="card blog-card" data-category="mlops">
-          <div class="card-meta">February 20, 2026 • 12 min read</div>
-          <h3 class="card-title">Building a Production Agentic AI System: Lessons from Automating Kubernetes Deployments</h3>
-          <div class="card-tags">
-            <span class="tag success">Agentic AI</span>
-            <span class="tag success">LangGraph</span>
-            <span class="tag success">Kubernetes</span>
-            <span class="tag success">Production ML</span>
-          </div>
-          <p class="card-excerpt">How I built a 22-node LangGraph workflow that reduced Kubernetes deployment complexity by 72% and cut deployment time from 2-4 hours to 30 minutes. Deep dive into checkpoint-based resumption, HIPAA compliance, and production safety guards.</p>
-          <a href="blog/2026-02-agentic-ai-deployment.html" class="btn btn-link">Read More →</a>
-        </div>
+        <p class="card-excerpt">Building a travel concierge system using RAG, fine-tuned LLMs with LoRA, and microservices that generates personalized itineraries with 91.8% feasibility and 2.4s response time.</p>
+        <a href="blog/2026-02-travel-concierge-rag.html" class="btn btn-link">Read More →</a>
       </div>
-    </section>
 
-    <section style="text-align: center; margin-top: 3rem;">
-      <h2>Want to discuss these topics?</h2>
-      <p>I'm always interested in connecting with fellow ML practitioners.</p>
-      <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+      <div class="card blog-card">
+        <div class="card-meta">February 19, 2026 • 6 min read</div>
+        <h3 class="card-title">Building a Production Agentic AI System: Lessons from Automating Kubernetes Deployments</h3>
+        <div class="card-tags">
+          <span class="tag success">Agentic AI</span>
+          <span class="tag success">LangGraph</span>
+          <span class="tag success">Kubernetes</span>
+          <span class="tag success">Production ML</span>
+        </div>
+        <p class="card-excerpt">How I built a 22-node LangGraph workflow that reduced Kubernetes deployment complexity by 72% and cut deployment time from 2-4 hours to 30 minutes. Deep dive into checkpoint-based resumption, HIPAA compliance, and production safety guards.</p>
+        <a href="blog/2026-02-agentic-ai-deployment.html" class="btn btn-link">Read More →</a>
+      </div>
+      </div>
     </section>
   </main>
 
@@ -80,6 +66,6 @@
     <p>© 2026 Tolu Olukoga. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="old-site/script.js"></script>
 </body>
 </html>

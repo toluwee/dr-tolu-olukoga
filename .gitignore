@@ -1,3 +1,7 @@
+# Blog build (generated files - don't ignore, we want to commit them)
+# blog/*.html - committed to repo
+# blog.html - committed to repo
+
 # Claude Code related files
 CLAUDE.md
 .claude/

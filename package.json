@@ -1,0 +1,12 @@
+{
+  "name": "toluwee-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:blog": "node build-blog.js"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^17.0.3"
+  }
+}
